@@ -1,0 +1,5 @@
+{
+ "usingComponents": {
+  "b-swiper": "../../component/banner/index"
+}
+}
