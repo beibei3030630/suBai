@@ -1,0 +1,10 @@
+<!--component/scroll-item/index.wxml-->
+<view class="itemContainer">
+  <image class="cover" src="/images/test.jpg"></image>
+  <view class="itemContent">
+    <text class="title">极净亮 日式精细擦窗</text>
+    <text class="desc">4小时全屋保洁+擦窗 超高好评率</text>
+    <text class="price">199</text>
+  </view>
+  <text class="book">预约</text>
+</view>

@@ -1,0 +1,29 @@
+<!--component/toggle/index.wxml-->
+<view class="toggleContainer">
+  <view class="tab">
+    <block wx:for="{{tabTitle}}">
+    <view class="swiper-tab-item {{tool.setActive(currentTab,index)}}" data-current="{{index}}" bind:tap="clickTap">{{item}}</view>
+    </block>
+  </view>
+  <view cass="tabContent">
+    <swiper current='{{currentTab}}' duration='300'>
+     <swiper-item>
+      <b-scroll-item/>
+     </swiper-item>
+     <swiper-item>2</swiper-item>
+     <swiper-item>3</swiper-item>
+    </swiper>
+  </view>
+</view>
+<wxs module="tool">
+  var setActive=function(currentTab,index){
+    if(index==currentTab){
+      return 'active'
+    }else{
+      return ''
+    }
+  }
+  module.exports={
+    setActive:setActive
+  }
+</wxs>

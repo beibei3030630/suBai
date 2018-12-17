@@ -1,0 +1,52 @@
+/* component/scroll-item/index.wxss */
+
+.itemContainer {
+  height: 200rpx;
+  display: flex;
+  flex-direction: row;
+  justify-items: center;
+  align-items: center;
+  border-bottom: 4rpx solid #e6e6e6;
+  width: 90%;
+  margin: 0 auto;
+}
+
+.itemContainer .cover {
+  height: 150rpx;
+  width: 150rpx;
+}
+
+.itemContainer .cover image {
+  width: 100%;
+  height: 100%;
+}
+
+.itemContainer .itemContent {
+  display: flex;
+  flex-direction: column;
+  margin-left: 20rpx;
+  height: 150rpx;
+  justify-content: space-around;
+  font-size: 25rpx;
+}
+
+.itemContent .title {
+  font-size: 34rpx;
+}
+
+.itemContent .desc {
+  color: #999;
+}
+
+.itemContent .price {
+  color: #ade7fa;
+}
+
+.itemContainer .book {
+  font-size: 26rpx;
+  padding: 10rpx 30rpx;
+  border: 2rpx solid #000;
+  border-radius: 6rpx;
+  margin-left: 20rpx;
+  margin-top: 35rpx;
+}
