@@ -1,0 +1,49 @@
+/* component/login/index.wxss */
+
+.loginContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.logo {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 700rpx;
+}
+
+.logo image {
+  width: 250rpx;
+  height: 250rpx;
+  border-radius: 50%;
+  border: 2rpx solid #3baef1;
+}
+
+.logo text {
+  font-size: 32rpx;
+  margin-top: 50rpx;
+}
+
+.buttonList {
+  text-align: center;
+  margin: 0 auto;
+  width: 90%;
+}
+
+.buttonList view {
+  height:90rpx;
+font-size:30rpx;
+line-height:90rpx;
+border-radius:60rpx;
+
+}
+.buttonList view:nth-child(1){
+  background-color: #3baef1;
+  color: #fff;
+}
+.buttonList view:nth-child(2){
+  margin-top: 20rpx;
+  border: 4rpx solid #3baef1;
+  color: #3baef1;
+}

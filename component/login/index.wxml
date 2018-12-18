@@ -1,0 +1,11 @@
+<!--component/login/index.wxml-->
+<view class="loginContainer" wx:if="{{!authorized}}"> 
+  <view class="logo">
+    <image src="/images/tab.jpg"></image>
+    <text>当前操作需要登录</text>
+  </view>
+  <view class="buttonList">
+    <view>使用微信登录</view>
+    <view>返回首页</view>
+  </view>
+</view>

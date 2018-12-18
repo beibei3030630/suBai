@@ -1,0 +1,4 @@
+<!--pages/home/home.wxml-->
+<view class="homeContainer">
+  <b-swiper imgUrl="{{imgUrl}}"/>
+</view>
