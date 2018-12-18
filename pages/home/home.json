@@ -1,6 +1,7 @@
 {
  "usingComponents": {
   "b-swiper": "../../component/banner/index",
-  "b-toggle":"../../component/toggle/index"
+  "b-toggle":"../../component/toggle/index",
+  "b-c":"../../component/calendar/index"
 }
 }

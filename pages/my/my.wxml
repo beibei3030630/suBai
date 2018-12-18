@@ -10,7 +10,12 @@
     <image src="{{userInfo.avatarUrl}}"></image>
     <text>{{userInfo.nickName}}</text>
   </view>
-  <view class="listContainer">
-    
+  <view class="listWrap">
+    <view class="listItem">
+      <b-list wx:for="{{mainList}}" icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}" setArrow="{{item.setArrow}}" />
+    </view>
+    <view class="listItem">
+      <b-list wx:for="{{singleList}}" icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}" setArrow="{{item.setArrow}}" />
+    </view>
   </view>
 </view>

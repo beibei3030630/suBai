@@ -30,8 +30,13 @@ page {
   margin-top: 25rpx;
 }
 
-.singleList{
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
+.listWrap{
+  width: 100%;
+  margin: 30rpx 0;
+  
+}
+.listItem{
+  border-top:1px solid #dfdfdf;
+  background-color: #fff;
+  margin-bottom: 40rpx;
 }

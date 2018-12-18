@@ -2,4 +2,5 @@
 <view class="homeContainer">
   <b-swiper imgUrl="{{imgUrl}}"/>
   <b-toggle/>
+  <b-c/>
 </view>

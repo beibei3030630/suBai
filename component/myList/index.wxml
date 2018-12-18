@@ -1,0 +1,11 @@
+<!--component/myList/index.wxml-->
+<view class="singleList">
+  <view class="mainContent">
+    <image src="{{icon}}"></image>
+    <text>{{title}}</text>
+  </view>
+  <slot wx:if="{{!desc}}"></slot>
+  <text wx:if="{{desc}}" class="desc">{{desc}}</text>
+  <slot wx:if="{{!setArrow}}"></slot>
+  <image wx:if="{{setArrow}}"src="{{arrowSrc}}" class="arrow"/>
+</view>

@@ -7,7 +7,36 @@ Page({
   data: {
     userInfo: null,
     authorized: false,
-    
+    mainList: [{
+        icon: "/images/listTest.png",
+        title: "余额",
+        desc: '',
+        setArrow: false
+      },
+      {
+        icon: "/images/listTest.png",
+        title: "手机号",
+        desc: '绑定手机号',
+        setArrow: false
+      },
+      {
+        icon: "/images/listTest.png",
+        title: "我的地址",
+        desc: '',
+        setArrow: true
+      },
+      {
+        icon: "/images/listTest.png",
+        title: "优惠券",
+        desc: '',
+        setArrow: true
+      }
+    ],
+    singleList: [{
+      icon: "/images/listTest.png",
+      title: "联系客服",
+      setArrow: true
+    }]
   },
 
   /**
