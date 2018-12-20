@@ -1,1 +1,7 @@
-{}
+{
+  "component":true,
+  "usingComponents":{
+    "b-test":"../../component/login/index",
+    "b-btn":"../../component/button/index"
+  }
+}

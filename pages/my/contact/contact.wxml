@@ -1,0 +1,9 @@
+<!--pages/my/contact/contact.wxml-->
+<view class="mainContainer">
+  <text class="title">苏百家政在线客服</text>
+  <view class="listWrap">
+    <b-list title="在线客服" desc="点击右侧图标发起聊天" borderStyle="2rpx solid #f4f4f4" rightIcon="/images/mesgIcon.png" rIconWidth="44rpx" bind:clickIcon="clickContact"/>
+    <b-list title="客服热线" desc="4008-954-580" border="none" rightIcon="/images/phoneIcon.png" rIconWidth="38rpx" bind:clickIcon="makePhone"/>
+  </view>
+  <text class="tip">客服接线时间 08:00-21:00</text>
+</view>

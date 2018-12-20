@@ -12,14 +12,12 @@
   </view>
   <view class="listWrap">
     <view class="listItem">
-      <b-list wx:for="{{mainList}}" wx:key='' icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}" setArrow="{{item.setArrow}}" descIndent="none"/>
+      <b-list title="手机号" desc="绑定手机号" borderStyle="2rpx solid #ececec" setArrow="{{false}}" descIndent="none" />
+      <b-list title="我的地址" borderStyle="2rpx solid #ececec" />
+      <b-list title="优惠券" border="none"/>
     </view>
     <view class="listItem">
-      <b-list wx:for="{{singleList}}" wx:key=''  icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}"/>
-    </view>
-    <view class="listItem">
-      <b-list title="服务时间：2018年12月19日" desc="123"  titleIndent="none" descIndent="normal"/>
-      <b-list title="订单备注：无" titleIndent="none"/>
+      <b-list title="联系客服" border="none" bind:onClick="toContact"/>
     </view>
   </view>
 </view>

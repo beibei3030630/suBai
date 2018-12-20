@@ -31,7 +31,7 @@
 }
 
 .itemContent .title {
-  font-size: 34rpx;
+  font-size: 30rpx;
 }
 
 .itemContent .desc {

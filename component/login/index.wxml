@@ -5,7 +5,7 @@
     <text>当前操作需要登录</text>
   </view>
   <view class="buttonList">
-    <view>使用微信登录</view>
-    <view>返回首页</view>
+    <b-btn content="使用微信登录" bindtap="tapLogin"/>
+    <b-btn content="返回首页" background="#fff" color="#000" border="2px solid #ececec" bindtap="tapBack"/>
   </view>
 </view>

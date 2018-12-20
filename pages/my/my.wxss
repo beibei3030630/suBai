@@ -36,8 +36,7 @@ page {
 }
 
 .listItem {
-  border-top: 1px solid #dfdfdf;
-  border-bottom: 1px solid #dfdfdf;
+  border-bottom:1rpx solid #ececec;
   background-color: #fff;
   margin-bottom: 40rpx;
 }

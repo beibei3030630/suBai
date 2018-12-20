@@ -1,0 +1,2 @@
+<!--component/button/index.wxml-->
+<view class="btnContainer" style="background-color:{{background}};color:{{color}};font-size:{{size}};border:{{border}};border-radius:{{borderRadius}};letter-spacing:{{letterSpacing}};width:{{width}}" bindtap="tapBtn">{{content}}</view>

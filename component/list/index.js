@@ -8,6 +8,14 @@ Component({
       type: String,
       value: ''
     }, //左侧图标
+    rightIcon:{
+      type: String,
+      value: '/images/arrow.png'
+    },
+    rIconWidth:{
+      type: String,
+      value: '25rpx'
+    },
     img: {
       type: String,
       value: ''
@@ -36,30 +44,18 @@ Component({
       type: String,
       value: "noraml"
     }, //标题缩进
-    borderIndent:{
-      type:String,
-      value:"noraml"
-    },//下边框缩进
-    border:{
-      type:String,
-      value:"normal"
-    },
-    borderWeight:{
-      type:String,
-      value:'1rpx'
-    },
-    borderColor:{
-      type:String,
-      value:'#dfdfdf'
-    },
-    borderColor:{
-      type:String,
-      value:"#dfdfdf"
-    },
-    borderWeight:{
-      type:String,
-      value:"1rpx"
-    }
+    borderIndent: {
+      type: String,
+      value: "noraml"
+    }, //下边框缩进
+    border: {
+      type: String,
+      value: "normal"
+    }, //是否需要下边框
+    borderStyle: {
+      type: String,
+      value: ""
+    }, //设置边框颜色 粗细，style优先级最高如果设置了会覆盖掉border  none
   },
 
   /**
@@ -73,6 +69,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    onClick(e){
+      this.triggerEvent("onClick",{detail:e.detail},{})
+    },
+    clickIcon(e){
+      this.triggerEvent("clickIcon", { detail: e.detail }, {})
+    }
   }
 })

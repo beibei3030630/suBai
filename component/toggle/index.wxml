@@ -2,28 +2,40 @@
 <view class="toggleContainer">
   <view class="tab">
     <block wx:for="{{tabTitle}}">
-    <view class="swiper-tab-item {{tool.setActive(currentTab,index)}}" data-current="{{index}}" bind:tap="clickTap">{{item}}</view>
+      <view class="swiper-tab-item {{tool.setActive(currentTab,index)}}" data-current="{{index}}" bind:tap="clickTap">{{item}}</view>
     </block>
   </view>
-  <view cass="tabContent">
+  <view class="tabContent">
     <swiper current='{{currentTab}}' duration='300'>
-     <swiper-item>
-      <b-scroll-item/>
-     </swiper-item>
-     <swiper-item>2</swiper-item>
-     <swiper-item>3</swiper-item>
+      <swiper-item>
+        <scroll-view scroll-y="true">
+          <block wx:for="{{toggleData.toggleFirstData}}" wx:key="">
+            <b-scroll-item scrollData="{{item}}" />
+          </block>
+        </scroll-view>
+      </swiper-item>
+      <swiper-item>
+        <block wx:for="{{toggleData.toggleSecondData}}" wx:key="">
+          <b-scroll-item scrollData="{{item}}" />
+        </block>
+      </swiper-item>
+      <swiper-item>
+        <block wx:for="{{toggleData.toggleThirdData}}" wx:key="">
+          <b-scroll-item scrollData="{{item}}" />
+        </block>
+      </swiper-item>
     </swiper>
   </view>
 </view>
 <wxs module="tool">
-  var setActive=function(currentTab,index){
-    if(index==currentTab){
+  var setActive = function(currentTab, index) {
+    if (index == currentTab) {
       return 'active'
-    }else{
+    } else {
       return ''
     }
   }
-  module.exports={
-    setActive:setActive
+  module.exports = {
+    setActive: setActive
   }
 </wxs>

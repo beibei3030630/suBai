@@ -1,6 +1,6 @@
 <!--component/myList/index.wxml-->
-<view class="singleList list_borderIndent--{{borderIndent}} list_border--{{border}}" style="border-bottom:{{borderWeight}} solid {{borderColor}}">
-  <view class="rightContent">
+<view class="singleList list_borderIndent--{{borderIndent}} list_border--{{border}}" style="border-bottom:{{borderStyle}}" bind:tap="onClick">
+  <view class="leftContent">
     <image wx:if="{{img}}" class="img">{{img}}</image>
     <image wx:if="{{!img&&icon}}" src="{{icon}}" class="icon"></image>
     <view class="titleContainer title_{{titleIndent}}">
@@ -9,11 +9,11 @@
     </view>
   </view>
 
-  <view class="leftContent">
-    <!-- 这个位置放入一个插槽 可以替代描述的位置 -->
-    <slot wx:if="{{!desc}}" name="descDetail"></slot>
+  <view class="rightContent">
+    <!-- 这里的插槽是为了区别出特殊的desc -->
+    <slot wx:if="{{!desc}}"></slot>
     <text wx:if="{{desc}}" class="desc desc_{{descIndent}}">{{desc}}</text>
     <!-- <b-arrowIcon wx:if="{{setArrow}}"/> -->
-    <image src="/images/arrow.png" class="arrowIcon" wx:if="{{setArrow}}"/>
+    <image bindtap="clickIcon" src="{{rightIcon}}" class="icon" wx:if="{{setArrow}}" style='width:{{rIconWidth}}'/>
   </view>
 </view>

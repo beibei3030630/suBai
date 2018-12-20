@@ -3,7 +3,6 @@
       "pages/home/home",
       "pages/order/order",
       "pages/my/my",
-      "pages/my/contact/contact",
       "pages/test/test"
     ],
   "window":{

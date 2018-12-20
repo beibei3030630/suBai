@@ -23,20 +23,20 @@ image {
 .list_border--none{
   border-bottom:0;
 }
-.singleList .rightContent {
+.singleList .leftContent {
   display: flex;
   flex-direction: row;
   justify-content: baseline;
 }
-.rightContent .img{
+.leftContent .img{
   width: 70rpx;
   height: 70rpx;
 }
-.rightContent .titleContainer {
+.leftContent .titleContainer {
   font-size: 30rpx;
   margin-left: 30rpx;
 }
-.rightContent .title_none{
+.leftContent .title_none{
   margin: 0;
 }
 .singleList .leftContent{
@@ -44,15 +44,15 @@ image {
   flex-direction: row;
   align-items: center;
 }
-.leftContent .desc{
+.rightContent .desc{
   font-size: 30rpx;
   color: #aaa;
   margin-right: 20rpx;
 }
-.leftContent .desc_none{
+.rightContent .desc_none{
   margin:0;
 }
-.leftContent .arrowIcon{
+.rightContent .icon{
   width: 20rpx;
   height: 35rpx;
 }
