@@ -1,0 +1,59 @@
+/* component/myList/index.wxss */
+
+image {
+  width: 40rpx;
+  height: 40rpx;
+}
+
+.singleList {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border-bottom: 1rpx solid #dfdfdf;
+  margin-left:20rpx;
+  padding:20rpx 40rpx 20rpx 0;
+}
+
+/* 缩进下边框 */
+.list_borderIndent--none{
+  padding: 20rpx 40rpx;
+}
+/* 去除下边框 */
+.list_border--none{
+  border-bottom:0;
+}
+.singleList .rightContent {
+  display: flex;
+  flex-direction: row;
+  justify-content: baseline;
+}
+.rightContent .img{
+  width: 70rpx;
+  height: 70rpx;
+}
+.rightContent .titleContainer {
+  font-size: 30rpx;
+  margin-left: 30rpx;
+}
+.rightContent .title_none{
+  margin: 0;
+}
+.singleList .leftContent{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.leftContent .desc{
+  font-size: 30rpx;
+  color: #aaa;
+  margin-right: 20rpx;
+}
+.leftContent .desc_none{
+  margin:0;
+}
+.leftContent .arrowIcon{
+  width: 20rpx;
+  height: 35rpx;
+}
+

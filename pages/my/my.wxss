@@ -30,13 +30,14 @@ page {
   margin-top: 25rpx;
 }
 
-.listWrap{
+.listWrap {
   width: 100%;
   margin: 30rpx 0;
-  
 }
-.listItem{
-  border-top:1px solid #dfdfdf;
+
+.listItem {
+  border-top: 1px solid #dfdfdf;
+  border-bottom: 1px solid #dfdfdf;
   background-color: #fff;
   margin-bottom: 40rpx;
 }

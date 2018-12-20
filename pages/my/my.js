@@ -17,7 +17,8 @@ Page({
         icon: "/images/listTest.png",
         title: "手机号",
         desc: '绑定手机号',
-        setArrow: false
+        setArrow: false,
+        descIndent:'none'
       },
       {
         icon: "/images/listTest.png",

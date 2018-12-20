@@ -3,6 +3,6 @@
   "usingComponents": {
     "b-login": "../../component/login/index",
     "b-button": "../../component/image-button/index",
-    "b-list":"../../component/myList/index"
+    "b-list":"../../component/list/index"
   }
 }

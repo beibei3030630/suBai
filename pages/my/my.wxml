@@ -12,10 +12,14 @@
   </view>
   <view class="listWrap">
     <view class="listItem">
-      <b-list wx:for="{{mainList}}" icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}" setArrow="{{item.setArrow}}" />
+      <b-list wx:for="{{mainList}}" wx:key='' icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}" setArrow="{{item.setArrow}}" descIndent="none"/>
     </view>
     <view class="listItem">
-      <b-list wx:for="{{singleList}}" icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}" setArrow="{{item.setArrow}}" />
+      <b-list wx:for="{{singleList}}" wx:key=''  icon="{{item.icon}}" title="{{item.title}}" desc="{{item.desc}}"/>
+    </view>
+    <view class="listItem">
+      <b-list title="服务时间：2018年12月19日" desc="123"  titleIndent="none" descIndent="normal"/>
+      <b-list title="订单备注：无" titleIndent="none"/>
     </view>
   </view>
 </view>

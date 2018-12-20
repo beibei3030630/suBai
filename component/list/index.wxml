@@ -1,0 +1,19 @@
+<!--component/myList/index.wxml-->
+<view class="singleList list_borderIndent--{{borderIndent}} list_border--{{border}}" style="border-bottom:{{borderWeight}} solid {{borderColor}}">
+  <view class="rightContent">
+    <image wx:if="{{img}}" class="img">{{img}}</image>
+    <image wx:if="{{!img&&icon}}" src="{{icon}}" class="icon"></image>
+    <view class="titleContainer title_{{titleIndent}}">
+      <view>{{title}}</view>
+      <view wx:if="{{detail}}">{{detail}}</view>
+    </view>
+  </view>
+
+  <view class="leftContent">
+    <!-- 这个位置放入一个插槽 可以替代描述的位置 -->
+    <slot wx:if="{{!desc}}" name="descDetail"></slot>
+    <text wx:if="{{desc}}" class="desc desc_{{descIndent}}">{{desc}}</text>
+    <!-- <b-arrowIcon wx:if="{{setArrow}}"/> -->
+    <image src="/images/arrow.png" class="arrowIcon" wx:if="{{setArrow}}"/>
+  </view>
+</view>
