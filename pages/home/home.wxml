@@ -1,5 +1,5 @@
 <!--pages/home/home.wxml-->
-<view class="homeContainer">
+<view class="homeContainer" >
   <b-swiper imgUrl="{{imgUrl}}"/>
   <b-toggle toggleData="{{toggleData}}"/>
 </view>

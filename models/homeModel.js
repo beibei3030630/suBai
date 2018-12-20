@@ -12,6 +12,14 @@ class homeModel extends httpP {
       url:"app/goods/list"
     })
   }
+  getProDetail(goodsId){
+    return this.request({
+      url:"app/goods/info",
+      data:{
+        goods_id:goodsId
+      }
+    })
+  }
 }
 export {
   homeModel

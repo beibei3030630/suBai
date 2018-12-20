@@ -1,0 +1,8 @@
+<!--pages/home/proDetail/proDetail.wxml-->
+<view class="proDetailContainer">
+  <view class="mainContent"></view>
+  <view class="tabBar">
+    <view class="chooseCity"></view>
+    <view class="purchaseBtn">立即购买</view>
+  </view>
+</view>

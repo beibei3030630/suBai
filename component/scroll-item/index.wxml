@@ -1,10 +1,14 @@
 <!--component/scroll-item/index.wxml-->
-<view class="itemContainer">
+<view class="itemContainer" >
   <image class="cover" src="/images/test.jpg"></image>
   <view class="itemContent">
-    <text class="title">{{scrollData.goods_name}}</text>
-    <text class="desc">{{scrollData.goods_title}}</text>
-    <text class="price">{{scrollData.goods_price}}</text>
+    <view class="top">
+      <text class="title">{{scrollData.goods_name}}</text>
+      <text class="desc">{{scrollData.goods_title}}</text>
+    </view>
+    <view class="bottom">
+      <text class="price">￥{{scrollData.goods_price}}.00</text>
+      <text class="book" bindtap='toProDetail' data-goods-id="{{scrollData.goods_id}}">预约</text>
+    </view>
   </view>
-  <text class="book">预约</text>
 </view>

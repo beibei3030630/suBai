@@ -22,16 +22,19 @@
 }
 
 .itemContainer .itemContent {
+  margin: 20rpx 0;
   display: flex;
   flex-direction: column;
   margin-left: 20rpx;
-  height: 150rpx;
-  justify-content: space-around;
+  height: 80%;
+  justify-content: space-between;
   font-size: 25rpx;
+  width: 80%;
+ 
 }
 
 .itemContent .title {
-  font-size: 30rpx;
+  font-size: 28rpx;
 }
 
 .itemContent .desc {
@@ -39,14 +42,26 @@
 }
 
 .itemContent .price {
-  color: #ade7fa;
+  color: #3bc53a;
+  font-size: 28rpx;
 }
 
-.itemContainer .book {
-  font-size: 26rpx;
-  padding: 10rpx 30rpx;
-  border: 2rpx solid #000;
-  border-radius: 6rpx;
-  margin-left: 20rpx;
-  margin-top: 35rpx;
+.itemContent .book {
+  font-size: 28rpx;
+  padding: 5rpx 30rpx;
+  border: 3rpx solid #3bc53a;
+  border-radius: 34rpx;
+  color: #3bc53a;
+  width:56rpx;
+  height: 40rpx;
+}
+.itemContent .top{
+  display: flex;
+  flex-direction:column;
+}
+.itemContent .bottom{
+ display: flex;
+ flex-direction: row;
+ justify-content: space-between;
+ padding-right: 60rpx;
 }

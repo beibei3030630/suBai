@@ -1,6 +1,7 @@
 {
   "pages":[
       "pages/home/home",
+      "pages/home/proDetail/proDetail",
       "pages/order/order",
       "pages/my/my",
       "pages/my/contact/contact",
@@ -11,5 +12,27 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
     "navigationBarTextStyle":"black"
+  },
+  "tabBar": {
+    "color": "#aaa",
+    "selectedColor": "#09BB07",
+    "list": [{
+      "pagePath": "pages/home/home",
+      "text": "首页",
+      "iconPath": "images/icon/home.png",
+      "selectedIconPath": "/images/icon/home@hightLight.png"
+    },{
+      "pagePath": "pages/order/order",
+      "text": "订单",
+      "iconPath": "images/icon/order.png",
+      "selectedIconPath": "/images/icon/order@hightLight.png"
+    },
+    {
+      "pagePath": "pages/my/my",
+      "text": "我的",
+      "iconPath": "images/icon/my.png",
+      "selectedIconPath": "/images/icon/my@hightLight.png"
+    }
+    ]
   }
 }

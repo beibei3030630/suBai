@@ -21,6 +21,11 @@ Component({
    * 组件的方法列表
    */
   methods: {
-
+    toProDetail(e){
+      let goodsId=e.currentTarget.dataset.goodsId;
+      wx.navigateTo({
+        url: './proDetail/proDetail?id='+goodsId,
+      })
+    }
   }
 })

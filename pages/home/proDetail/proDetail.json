@@ -1,0 +1,6 @@
+{
+  "componet":true,
+  "usingComponents":{
+    "b-btn":"../../../component/button/index"
+    }
+}

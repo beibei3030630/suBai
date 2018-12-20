@@ -1,4 +1,9 @@
 <!--pages/test/test.wxml-->
-<text>pages/test/test.wxml</text>
 <button bindtap='onTest'>测试登录</button>
 <b-test authorized="{{false}}" bind:tapLogin="tapLogin"  bind:tapBack="tapBack" />
+<view class="section"> 
+  <input placeholder="输入关键字" auto-focus type="text" bindinput="bindKeyInput"/> 
+</view> 
+<view class="sug_info"> 
+  <text>{{sugData}}</text> 
+</view>

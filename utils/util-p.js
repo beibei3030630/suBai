@@ -3,9 +3,9 @@ import {
 } from "../config.js";
 class httpP {
   request({
-    url:url,
-    data={},
-    method="get"
+    url: url,
+    data = {},
+    method = "get"
   }) {
     return new Promise((resolve, reject) => {
       wx.request({
@@ -16,16 +16,36 @@ class httpP {
         method: method,
         data: data,
         success(res) {
-          const firstNum = res.statusCode.toString();
-          if (firstNum.startsWith(2)) {
+          const resStatus = res.statusCode.toString();
+          if (resStatus.startsWith(2)) {
             resolve(res);
           } else {
-            
+
           }
         }
       })
     })
+  }
+  requestLocation({
+    url: url
+  }) {
+    return new Promise((resolve, reject) => {
+      wx.request({
+        url: url,
+        header: {
+          "content-type": "application/json"
+        },
+        success(res) {
+          const resStatus = res.statusCode.toString();
+          if (resStatus.startsWith(2)) {
+            resolve(res)
+          }
 
+        }
+      })
+    })
   }
 }
-export {httpP}
+export {
+  httpP
+}
