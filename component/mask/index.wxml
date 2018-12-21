@@ -1,0 +1,2 @@
+<!--component/mask/index.wxml-->
+<view class="mask" style="opacity:{{opacity}}"></view>

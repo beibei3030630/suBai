@@ -2,7 +2,7 @@
 <view class="proDetailContainer">
   <view class="mainContent"></view>
   <view class="tabBar">
-    <view class="chooseCity"></view>
-    <view class="purchaseBtn">立即购买</view>
+    <view class="left"><image src="/images/icon/local.png"/>{{currentCity}}</view>
+    <view class="right" bindtap='toOrder'>立即购买</view>
   </view>
 </view>

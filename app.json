@@ -2,7 +2,13 @@
   "pages":[
       "pages/home/home",
       "pages/home/proDetail/proDetail",
-      "pages/order/order",
+      "pages/order/orderList",
+      "pages/order/submitOrder/submitOrder",
+      "pages/order/serverTime/serverTime",
+      "pages/order/addressList/addressList",
+      "pages/order/addAddress/addAddress",
+      "pages/order/mesgBoard/mesgBoard",
+      "pages/order/useTicket/useTicket",
       "pages/my/my",
       "pages/my/contact/contact",
       "pages/test/test"
@@ -22,7 +28,7 @@
       "iconPath": "images/icon/home.png",
       "selectedIconPath": "/images/icon/home@hightLight.png"
     },{
-      "pagePath": "pages/order/order",
+      "pagePath": "pages/order/orderList",
       "text": "订单",
       "iconPath": "images/icon/order.png",
       "selectedIconPath": "/images/icon/order@hightLight.png"

@@ -5,7 +5,7 @@
     <image wx:if="{{!img&&icon}}" src="{{icon}}" class="icon"></image>
     <view class="titleContainer title_{{titleIndent}}">
       <view>{{title}}</view>
-      <view wx:if="{{detail}}">{{detail}}</view>
+      <view class="detail" wx:if="{{detail}}">{{detail}}</view>
     </view>
   </view>
 

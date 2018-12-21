@@ -1,6 +1,0 @@
-{
-  "component": true,
-  "usingComponents": {
-    "b-list": "../../component/list/index"
-  }
-}

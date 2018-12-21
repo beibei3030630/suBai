@@ -23,7 +23,7 @@ Page({
       let tempArr = [],
         tempUrl;
       for (var i in res.data) {
-        tempUrl = httpData.rootDirectory.concat(res.data[i].ban_img);
+        tempUrl = res.data[i].ban_img;
         tempArr.push(tempUrl)
       }
       this.setData({

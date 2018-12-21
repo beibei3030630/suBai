@@ -1,0 +1,33 @@
+<!--pages/order/submitOrder/submitOrder.wxml-->
+<!--pages/order/order.wxml-->
+<view class="orderContainer">
+  <view class="list-wrap">
+    <view class="list-item">
+      <b-scrollItem scrollData="{{produceData}}" hasBook="{{false}}" border="none" />
+    </view>
+    <view class="list-item addAddress">
+      <b-list title="添加服务地址" detail="还没有服务地址，点击添加地址" border="none" fontSize="60rpx"  bind:onClick="toAddressList"/>
+    </view>
+    <view class="list-item">
+      <b-list title="服务时间" desc="选择服务时间" borderStyle="1rpx solid #f4f4f4" />
+      <b-list title="订单备注" desc="选填、可填写服务需求" border="none" />
+    </view>
+    <view class="list-item">
+      <b-list title="优惠券" desc="使用优惠券" border="none" />
+    </view>
+    <view class="list-item serviePrice">
+      <b-list title="服务金额" desc="￥3999.00" setArrow="{{false}}" border="none" descIndent="none" />
+    </view>
+    <view class="tips">
+      购买即视作同意
+      <text bindtap='purchaseContract'>《用户购买协议》</text>
+      <text bindtap='serviceExplan'>《服务说明》</text>
+    </view>
+  </view>
+  <view class="tabBar">
+    <view class="left">还需支付:
+      <text class="hightLight">￥{{discountPrice}}.00</text>
+    </view>
+    <view class="right" bindtap='confirmOrder'>确认下单</view>
+  </view>
+</view>

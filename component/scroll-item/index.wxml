@@ -1,5 +1,5 @@
 <!--component/scroll-item/index.wxml-->
-<view class="itemContainer" >
+<view class="itemContainer border--{{border}}">
   <image class="cover" src="/images/test.jpg"></image>
   <view class="itemContent">
     <view class="top">
@@ -8,7 +8,7 @@
     </view>
     <view class="bottom">
       <text class="price">￥{{scrollData.goods_price}}.00</text>
-      <text class="book" bindtap='toProDetail' data-goods-id="{{scrollData.goods_id}}">预约</text>
+      <text class="book" wx:if="{{hasBook}}" bindtap='toProDetail' data-goods-id="{{scrollData.goods_id}}">{{btnContent}}</text>
     </view>
   </view>
 </view>

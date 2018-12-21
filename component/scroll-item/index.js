@@ -7,6 +7,20 @@ Component({
     scrollData:{
       type:Object,
       value:{}
+    },
+    // 是否需要按钮
+    hasBook:{
+      type:Boolean,
+      value:true
+    },
+    // 按钮文字
+    btnContent:{
+      type:String,
+      value:"预约"
+    },
+    border:{
+      type:String,
+      value:"normal"
     }
   },
 

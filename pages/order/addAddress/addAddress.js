@@ -1,11 +1,13 @@
-// pages/order/order.js
+// pages/order/addAddress/addAddress.js
 Page({
 
   /**
    * 页面的初始数据
    */
-  data: {
-
+  data: {  
+    areaFlag:false,
+    areaList:["80平米以下","80-99平米","100-119平米","120-139平米","140-159平米","160平米以上"],
+    areaVal: "选择您的服务面积"
   },
 
   /**
@@ -14,7 +16,23 @@ Page({
   onLoad: function (options) {
 
   },
-
+  // 提交地址
+  addressSumbit(e){
+    console.log(e)
+  },
+  // 选择面积
+  chooseArea(){
+    this.setData({
+      areaFlag:true
+    })
+  },
+  // 得到面积的值
+  getAreaVal(e){
+    this.setData({
+      areaVal: e._relatedInfo.anchorTargetText,
+      areaFlag:false
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -1,30 +1,32 @@
-// pages/home/proDetail/proDetail.js
-import {
-  homeModel
-} from "../../../models/homeModel.js"
-const homemodel = new homeModel();
+// pages/order/submitOrder/submitOrder.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentCity:"上海市"
+    originPrice: "3999",
+    discountPrice: "3999",
+    // 产品展示列表
+    produceData: {
+      goods_name:"123",
+       goods_title: "456",
+       goods_price:"789"
+    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let id = options.id;
-    console.log(id)
-    homemodel.getProDetail(id).then(res => console.log(res.data))
+    
   },
-  toOrder(){
+  toAddressList(){
     wx.navigateTo({
-      url: '../../order/submitOrder/submitOrder',
+      url: '../addressList/addressList',
     })
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

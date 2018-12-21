@@ -4,5 +4,4 @@
   height: 90rpx;
   line-height: 90rpx;
   text-align: center;
-  margin: 0 auto 30rpx;
 }

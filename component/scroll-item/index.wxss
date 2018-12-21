@@ -10,7 +10,9 @@
   width: 90%;
   margin: 0 auto;
 }
-
+.border--none{
+  border-bottom:0;
+}
 .itemContainer .cover {
   height: 150rpx;
   width: 150rpx;

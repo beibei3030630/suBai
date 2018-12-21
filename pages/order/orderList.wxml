@@ -1,0 +1,18 @@
+<!--pages/order/orderList.wxml-->
+<view class="orderContainer">
+  <block wx:for="{{orderList}}" wx:key=''>
+    <view class="orderItem">
+      <view class="itemHeader">
+        <view class="info">
+          <text>{{item.orderTime}}</text>
+          <text class='serviceCount'>（服务还剩{{item.serviceCount}}）</text>
+        </view>
+        <view class="orderStatus">{{item.serviceStatus}}</view>
+      </view>
+      <view class="itemBody">
+        <b-scrollItem scrollData="{{item}}" btnContent="联系客服" border="none"/>
+      </view>
+    </view>
+  </block>
+  <view class="noMore">没有更多了~</view>
+</view>

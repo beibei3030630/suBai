@@ -35,6 +35,10 @@ Component({
     width:{
       type: String,
       value: "90%"
+    },
+    margin:{
+      type: String,
+      value: "0 auto 30rpx"
     }
   },
 

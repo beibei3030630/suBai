@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "b-btn": "../../../component/button/index",
+    "b-mask":"../../../component/mask/index"
+  }
+}

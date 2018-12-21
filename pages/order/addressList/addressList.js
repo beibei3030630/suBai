@@ -1,28 +1,40 @@
-// pages/home/proDetail/proDetail.js
-import {
-  homeModel
-} from "../../../models/homeModel.js"
-const homemodel = new homeModel();
+// pages/order/addressList/addressList.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentCity:"上海市"
+    addressList: [{
+        name: "向云清",
+        phoneNum: "18770890623",
+        address: "漕宝路401号3号楼2楼B座"
+
+      },
+      {
+        name: "向云清",
+        phoneNum: "18770890623",
+        address: "漕宝路401号3号楼2楼B座"
+
+      }
+    ],
+    defaultFlag: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let id = options.id;
-    console.log(id)
-    homemodel.getProDetail(id).then(res => console.log(res.data))
+
   },
-  toOrder(){
+  swtichSelect(){
+    this.setData({
+      defaultFlag: !this.data.defaultFlag
+    })
+  },
+  addAddress(){
     wx.navigateTo({
-      url: '../../order/submitOrder/submitOrder',
+      url: '../addAddress/addAddress',
     })
   },
   /**

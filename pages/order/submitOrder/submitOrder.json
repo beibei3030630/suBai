@@ -1,0 +1,7 @@
+{
+  "component":true,
+  "usingComponents":{
+    "b-list":"../../../component/list/index",
+    "b-scrollItem":"../../../component/scroll-item/index"
+  }
+}

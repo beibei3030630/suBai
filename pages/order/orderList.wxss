@@ -1,0 +1,31 @@
+/* pages/order/orderList.wxss */
+page{
+  background-color: #F9F8FD;
+}
+.orderContainer{
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+.orderContainer .orderItem{
+  background-color: #fff;
+  padding-left: 30rpx;
+  margin-bottom: 30rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+.orderContainer .orderItem .itemHeader{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  font-size: 28rpx;
+  color: #c1c1c1;
+  padding-right: 20rpx;
+  padding-bottom: 20rpx;
+  border-bottom: 1rpx solid #ececec;
+}
+/* 没有更多了 */
+.orderContainer .noMore{
+  font-size: 25rpx;
+  color:#999;
+  margin: 35rpx auto 0;
+}

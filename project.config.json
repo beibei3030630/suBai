@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 4,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -66,7 +66,31 @@
 				{
 					"id": -1,
 					"name": "proDetail",
-					"pathName": "pages/home/proDetail/proDetail"
+					"pathName": "pages/home/proDetail/proDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "submitOrder",
+					"pathName": "pages/order/submitOrder/submitOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addressList",
+					"pathName": "pages/order/addressList/addressList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "addAddress",
+					"pathName": "pages/order/addAddress/addAddress",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderList",
+					"pathName": "pages/order/orderList"
 				}
 			]
 		}

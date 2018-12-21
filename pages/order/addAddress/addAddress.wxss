@@ -1,0 +1,68 @@
+/* pages/order/addAddress/addAddress.wxss */
+
+page {
+  background-color: #f9f8fd;
+}
+
+.addressForm {
+  width: 100%;
+}
+
+.addressForm .mainContainer {
+  background-color: #fff;
+  margin: 20rpx 0;
+  padding-left: 30rpx;
+}
+
+.addressForm .mainContainer .inputItem {
+  display: flex;
+  flex-direction: row;
+  padding: 20rpx 0;
+  border-bottom: 2rpx solid #ececec;
+  font-size: 32rpx;
+  align-items: center;
+}
+
+.addressForm .mainContainer .inputItem:last-child {
+  border: none;
+}
+
+.inputItem text:nth-child(1) {
+  width: 25%;
+}
+
+.inputItem text:nth-child(2) {
+  color: #808487;
+  width: 70%;
+}
+
+.saveBtn {
+  margin-top: 80rpx;
+  width: 90%;
+  background-color: #09bb07;
+  color: #fff;
+}
+
+/* 面积选择框 */
+
+.areaPanel {
+  height: 502rpx;
+  width: 60%;
+  margin: auto;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: #fff;
+  z-index: 100;
+}
+
+.areaItem {
+  padding: 20rpx 20rpx;
+  border: 1rpx solid #f4f4f4;
+  font-size: 30rpx;
+}
+.areaItem:last-child{
+  border: none;
+}

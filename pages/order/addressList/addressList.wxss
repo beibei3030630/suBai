@@ -1,0 +1,102 @@
+/* pages/order/addressList/addressList.wxss */
+
+page {
+  background-color: #f9f8fd;
+}
+
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+.addressList {
+  width: 100%;
+}
+
+.addressItem {
+  background-color: #fff;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20rpx;
+  margin-bottom: 30rpx;
+}
+
+.addressItem>view {
+  padding: 20rpx;
+}
+
+.addressItem .addressDetail {
+  display: flex;
+  flex-direction: column;
+  border-bottom: 2rpx solid #ececec;
+  position: relative;
+}
+
+.addressItem .addressDetail .top {
+  font-size: 32rpx;
+  width: 80%;
+}
+
+.addressItem .addressDetail .center {
+  font-size: 28rpx;
+  color: #ccc;
+  margin-top: 15rpx;
+}
+
+.addressItem .addressDetail .bottom{
+  color: #09bb07;
+  font-size: 30rpx;
+  position:absolute;
+  top: 25rpx;
+  right: 30rpx;
+}
+
+.addressItem .optionsList {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.addressItem .optionsList .default {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.addressItem .optionsList .default image {
+  width: 45rpx;
+  height: 45rpx;
+}
+
+.addressItem .optionsList .default text {
+  font-size: 32rpx;
+  margin-left: 20rpx;
+}
+
+.addressItem .optionsList .btnList {
+  display: flex;
+  flex-direction: row;
+}
+
+.addressItem .optionsList .btn {
+  font-size: 24rpx;
+  padding: 6rpx 30rpx;
+  border: 2rpx solid #09bb07;
+  color: #09bb07;
+  margin-left: 20rpx;
+  border-radius: 20rpx;
+  margin-top: 20rpx;
+}
+
+.noAddress {
+  font-size: 35rpx;
+  color: #666;
+  margin: 50rpx auto;
+}
+
+b-btn view {
+  position: fixed;
+  bottom: 0;
+}
