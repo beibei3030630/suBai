@@ -4,9 +4,9 @@ import {
 } from "../../utils/util-p.js";
 let test = new httpP();
 var bmap = require('../../libs/bmap-wx.js');
-import{
+import {
   locationModel
-}from "../../models/locationModel.js";
+} from "../../models/locationModel.js";
 let locationmodel = new locationModel();
 Page({
 
@@ -15,16 +15,45 @@ Page({
    */
   data: {
     city: "",
-    sugData: ''
+    sugData: '',
+    min: "00",
+    second: "00",
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    locationmodel.authorize(res=>{
-      this.loadCity(res.longitude,res.latitude)
-    });
+    wx.request({
+      url: 'http://mall.xinwenyifuxing.com/mallapp/orderlist',
+      success(res){
+        // console.log(res)
+      }
+    })
+    let that=this;
+    wx.login({
+      success(res){
+        if(res.code){
+          wx.getSetting({
+            success(res2){
+              if(res2.authSetting["scope.userInfo"]){
+                wx.getUserInfo({
+                  success(res3){
+                    let code=res.code;
+                    let iv=res3.iv;
+                    let encryptedData=encodeURIComponent(res.encryptedData);
+                    that.login(code,iv,encryptedData);
+                  }
+                })
+              }
+            }
+          })
+        }
+      }
+    })
+    // locationmodel.authorize(res => {
+    //   this.loadCity(res.longitude, res.latitude)
+    // });
     // wx.login({
     //   success: function(res) {
     //     test.request({
@@ -44,23 +73,99 @@ Page({
     // }).then(res=>{
     //   console.log(res)
     // })
+    // this.resetTime(600);
+    // wx.request({
+    //   url: "http://mall.xinwenyifuxing.com/mallapp/app/getcode",
+    //   method:'post',
+    //   data:{
+    //     phone:"15000199635"
+    //   },
+    //   success(res) {
+    //       console.log(res)
+    //   }
+    // })
+    // wx.login({
+    //   success(res){
+    //       console.log(res)
+    //   },
+    //   fail(err){
+    //     console.log(err)
+    //   }
+    // })
+    
   },
-  loadCity(log,lat){
-    locationmodel.loadCity(log,lat).then(res=>{
+  login(code,iv,encryptedData){
+    var that=this;
+    wx.request({
+      url: 'http://mall.xinwenyifuxing.com/mallapp/app/weixinlogin',
+      method:'post',
+      data:{
+        code:code,
+        iv:iv,
+        encryptedData:encryptedData
+      },
+      success(res){
+        console.log(res)
+      }
+    })
+  },
+  loadCity(log, lat) {
+    locationmodel.loadCity(log, lat).then(res => {
       console.log(res)
     })
   },
-  
-  bindKeyInput: function (e) {
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function() {
+    //获得dialog组件
+
+  },
+
+  // 倒计时
+  resetTime: function(time) {
+    var that = this;
+    var timer = null;
+    var t = time;
+    var m = 0;
+    var s = 0;
+    m = Math.floor(t / 60 % 60);
+    m < 10 && (m = '0' + m);
+    s = Math.floor(t % 60);
+
+    function countDown() {
+      s--;
+      s < 10 && (s = '0' + s);
+      if (s.length >= 3) {
+        s = 59;
+        m = "0" + (Number(m) - 1);
+      }
+      if (m.length >= 3) {
+        m = '00';
+        s = '00';
+        clearInterval(timer);
+        console.log("结束了");
+      }
+      console.log(m + "分钟" + s + "秒");
+      that.setData({
+        min: m,
+        second: s
+      })
+    }
+    timer = setInterval(countDown, 1000);
+
+  },
+
+  bindKeyInput: function(e) {
     var that = this;
     // 新建百度地图对象 
     var BMap = new bmap.BMapWX({
       ak: 'I95XYSppFZGnotARfNqleak4HuH3VtFW'
     });
-    var fail = function (data) {
+    var fail = function(data) {
       console.log(data)
     };
-    var success = function (data) {
+    var success = function(data) {
       var sugData = '';
       for (var i = 0; i < data.result.length; i++) {
         sugData = sugData + data.result[i].name + '\n';
@@ -93,13 +198,6 @@ Page({
         )
       }
     })
-  },
-  /**
-   * 生命周期函数--监听页面初次渲染完成
-   */
-  onReady: function() {
-    //获得dialog组件
-
   },
 
 

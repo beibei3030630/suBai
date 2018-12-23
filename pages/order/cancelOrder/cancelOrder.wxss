@@ -1,0 +1,38 @@
+/* pages/order/cancelOrder/cancelOrder.wxss */
+page{
+background-color: #F8F8FD;
+}
+.mainContainer{
+  margin-top: 20rpx;
+  display: flex;
+  flex-direction: column;
+}
+.mainContainer .reasoList{
+  margin-bottom:20rpx;
+}
+.mainContainer .reasoItem{
+  background-color: #fff;
+  padding: 20rpx 80rpx 20rpx 20rpx;
+  border-bottom: 1rpx solid #ececec;
+  font-size: 32rpx;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.mainContainer .reasoItem image{
+  width: 40rpx;
+  height: 40rpx;
+}
+.mainContainer .tips{
+  color: #949494;
+  font-size: 24rpx;
+  margin: 30rpx 0 0 20rpx;
+}
+.mainContainer .submitBtn{
+  color: #fff;
+  background-color: #09BB07;
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  border-radius: 0;
+}

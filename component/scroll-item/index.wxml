@@ -1,14 +1,16 @@
 <!--component/scroll-item/index.wxml-->
 <view class="itemContainer border--{{border}}">
-  <image class="cover" src="/images/test.jpg"></image>
+  <image class="cover" src="{{scrollData.img}}"></image>
   <view class="itemContent">
-    <view class="top">
-      <text class="title">{{scrollData.goods_name}}</text>
-      <text class="desc">{{scrollData.goods_title}}</text>
+    <view class="limitHeight">
+      <text class="title">{{scrollData.title}}</text>
+      <text wx:if="{{scrollData.serviceTime}}" class="serviceContent">服务时间：{{scrollData.serviceTime}}</text>
+      <text wx:if="{{scrollData.serviceAddress}}" class=" serviceContent">服务地址：{{scrollData.serviceAddress}}</text>
+      <text wx:if="{{scrollData.desc}}" class="desc">{{scrollData.desc}}</text>
     </view>
-    <view class="bottom">
-      <text class="price">￥{{scrollData.goods_price}}.00</text>
-      <text class="book" wx:if="{{hasBook}}" bindtap='toProDetail' data-goods-id="{{scrollData.goods_id}}">{{btnContent}}</text>
-    </view>
+    <slot name="payStatus"></slot>
+    <text class="actualPirce" wx:if="{{scrollData.actualPirce}}">实付：￥{{scrollData.actualPirce}}.00</text>
+    <text class="price" wx:if="{{scrollData.price}}">￥{{scrollData.price}}.00</text>
+    <text class="btn" wx:if="{{hasBook}}" bindtap='toProDetail' data-goods-id="{{scrollData.goods_id}}">{{btnContent}}</text>
   </view>
 </view>

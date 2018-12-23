@@ -20,9 +20,13 @@ class httpP {
           if (resStatus.startsWith(2)) {
             resolve(res);
           } else {
-
+            reject(res)
           }
+        },
+        fail(err) {
+          reject(err)
         }
+
       })
     })
   }
@@ -39,8 +43,12 @@ class httpP {
           const resStatus = res.statusCode.toString();
           if (resStatus.startsWith(2)) {
             resolve(res)
+          } else {
+            reject(err)
           }
-
+        },
+        fail(err) {
+            reject(err)
         }
       })
     })

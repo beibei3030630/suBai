@@ -1,0 +1,2 @@
+<!--pages/login/login.wxml-->
+<b-login status="login" />

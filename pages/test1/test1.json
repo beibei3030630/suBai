@@ -1,0 +1,11 @@
+
+{
+  "component": true,
+  "usingComponents": {
+    "b-test": "../../component/login/index",
+    "b-btn": "../../component/button/index",
+    "b-dialog": "../../../component/dialog/index",
+    "b-ticket": "../../component/ticket/index",
+    "b-scrollItem": "../../component/scroll-item/index"
+  }
+}

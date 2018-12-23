@@ -1,44 +1,53 @@
 {
-  "pages":[
-      "pages/home/home",
-      "pages/home/proDetail/proDetail",
-      "pages/order/orderList",
-      "pages/order/submitOrder/submitOrder",
-      "pages/order/serverTime/serverTime",
-      "pages/order/addressList/addressList",
-      "pages/order/addAddress/addAddress",
-      "pages/order/mesgBoard/mesgBoard",
-      "pages/order/useTicket/useTicket",
-      "pages/my/my",
-      "pages/my/contact/contact",
-      "pages/test/test"
-    ],
-  "window":{
-    "backgroundTextStyle":"light",
+  "pages": [
+    "pages/home/home",
+    "pages/home/proDetail/proDetail",
+    "pages/order/orderList",
+    "pages/order/submitOrder/submitOrder",
+    "pages/order/serverTime/serverTime",
+    "pages/order/addressList/addressList",
+    "pages/order/addAddress/addAddress",
+    "pages/order/mesgBoard/mesgBoard",
+    "pages/order/useTicket/useTicket",
+    "pages/order/cancelOrder/cancelOrder",
+    "pages/order/payment/payment",
+    "pages/order/orderDetail/orderDetail",
+    "pages/my/my",
+    "pages/my/contact/contact",
+    "pages/my/ticketList/ticketList",
+    "pages/login/login",
+    "pages/login/register/register",
+    "pages/test/test",
+    "pages/test1/test1"
+  ],
+  "window": {
+    "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle":"black"
+    "navigationBarTextStyle": "black"
   },
   "tabBar": {
     "color": "#aaa",
     "selectedColor": "#09BB07",
-    "list": [{
-      "pagePath": "pages/home/home",
-      "text": "首页",
-      "iconPath": "images/icon/home.png",
-      "selectedIconPath": "/images/icon/home@hightLight.png"
-    },{
-      "pagePath": "pages/order/orderList",
-      "text": "订单",
-      "iconPath": "images/icon/order.png",
-      "selectedIconPath": "/images/icon/order@hightLight.png"
-    },
-    {
-      "pagePath": "pages/my/my",
-      "text": "我的",
-      "iconPath": "images/icon/my.png",
-      "selectedIconPath": "/images/icon/my@hightLight.png"
-    }
+    "list": [
+      {
+        "pagePath": "pages/home/home",
+        "text": "首页",
+        "iconPath": "images/icon/home.png",
+        "selectedIconPath": "/images/icon/home@hightLight.png"
+      },
+      {
+        "pagePath": "pages/order/orderList",
+        "text": "订单",
+        "iconPath": "images/icon/order.png",
+        "selectedIconPath": "/images/icon/order@hightLight.png"
+      },
+      {
+        "pagePath": "pages/my/my",
+        "text": "我的",
+        "iconPath": "images/icon/my.png",
+        "selectedIconPath": "/images/icon/my@hightLight.png"
+      }
     ]
   }
 }

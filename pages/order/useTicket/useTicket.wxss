@@ -1,1 +1,73 @@
 /* pages/order/useTicket/useTicket.wxss */
+
+page {
+  background-color: #f8f8fd;
+}
+
+.ticketContainer {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.ticketContainer .ticketList {
+  margin-top: 30rpx;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+}
+
+.ticketContainer .ticketList .ticketItem {
+  border-radius: 20rpx;
+  width: 90%;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  padding: 30rpx 30rpx;
+  justify-content: space-between;
+  align-items: center;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+
+.ticketItem .left>view:nth-child(1) {
+  font-size: 36rpx;
+  text-align: center;
+  margin-bottom: 10rpx;
+}
+
+.ticketItem .left>view:nth-child(2) {
+  font-size: 24rpx;
+  color: #9b9b9b;
+}
+
+.ticketItem .center>view:nth-child(1) {
+  font-size: 36rpx;
+  text-align: left;
+  margin-bottom: 10rpx;
+}
+
+.ticketItem .center>view:nth-child(2) {
+  font-size: 24rpx;
+  color: #666;
+}
+
+.ticketItem .right image {
+  width: 55rpx;
+  height: 55rpx;
+}
+.ticketContainer button{
+  position: fixed;
+  bottom: 0;
+  width: 100%;
+  background-color: #09BB07;
+  color: #fff;
+  border-radius: 0;
+}
+.ticketContainer .tip{
+  font-size: 24rpx;
+  color: #9b9b9b;
+  margin-top: 60rpx;
+}

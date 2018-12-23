@@ -1,8 +1,11 @@
 /* component/login/index.wxss */
 
+
 .loginContainer {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  width: 100%;
 }
 
 .logo {
@@ -10,18 +13,94 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 700rpx;
+  margin: 60rpx 0;
 }
 
 .logo image {
-  width: 250rpx;
+  width: 310rpx;
   height: 250rpx;
-  border-radius: 50%;
-  border: 2rpx solid #3baef1;
+  margin-bottom: 50rpx;
 }
 
 .logo text {
-  font-size: 32rpx;
-  margin-top: 50rpx;
+  font-size: 30rpx;
+  color: #9b9b9b;
+  line-height: 45rpx;
 }
 
+.registerContaier {
+  width: 90%;
+}
+
+.btnList {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 18rpx;
+}
+
+.btnList .inputSytle {
+  height: 96rpx;
+  background-color: #eee;
+  border-radius: 20rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  margin-bottom: 30rpx;
+}
+
+.btnList .placeStyle {
+  color: #aaa;
+}
+
+.btnList .layout {
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30rpx;
+}
+
+.btnList .layout .inputSytle {
+  width: 60%;
+  margin-right: 5%;
+}
+
+.btnList .layout .getSmsCode {
+  color: #fff;
+  width: 220rpx;
+  border-radius: 20rpx;
+  height: 95rpx;
+  font-size: 30rpx;
+  line-height: 95rpx;
+}
+
+/* 注册按钮 */
+
+.registerContaier .registerBtn {
+  color: #fff;
+  margin-bottom: 30rpx;
+  border-radius: 20rpx;
+}
+
+.btnStyle {
+  width: 90%;
+  height: 90rpx;
+  line-height: 90rpx;
+  text-align: center;
+  border-radius: 20rpx;
+  margin-bottom: 30rpx;
+  font-size: 34rpx;
+}
+
+/* 登录按钮 */
+
+.loginBtn {
+  color: #fff;
+  background-color: #09bb07;
+}
+
+/* 返回按钮 */
+
+.backBtn {
+  background-color: #fff;
+  color: #000;
+  border: 2px solid #ececec;
+}

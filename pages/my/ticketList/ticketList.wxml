@@ -1,0 +1,41 @@
+<!--pages/my/ticketList/ticketList.wxml-->
+<view class="mainContainer">
+  <view class="tab">
+    <block wx:for="{{tabTitle}}" >
+      <view class="swiper-tab-item {{tool.setActive(currentTab,index)}}" data-current="{{index}}" bind:tap="clickTap">{{item}}</view>
+    </block>
+  </view>
+  <view class="ticketContainer">
+    <block wx:for="{{ticketListData}}" wx:key='' wx:if="{{currentTab==0}}">
+      <b-ticket ticketData="{{item}}"/>
+    </block>
+    <block wx:for="{{ticketListData}}" wx:key='' wx:if="{{currentTab==1}}">
+    22
+    </block>
+    <block wx:for="{{ticketListData}}" wx:key='' wx:if="{{currentTab==2}}">
+      33
+    </block>
+  </view>
+</view>
+<wxs module="tool">
+  var setActive = function(currentTab, index) {
+    if (index == currentTab) {
+      return 'active'
+    } else {
+      return ''
+    }
+  }
+  var filterData=function(itemData){
+    var newItemData={
+      title:itemData.goods_name,
+      desc:itemData.goods_title,
+      price:itemData.goods_price,
+      img:itemData.goods_pic
+    }
+    return newItemData
+  }
+  module.exports = {
+    setActive: setActive,
+    filterScrollData:filterData
+  }
+</wxs>

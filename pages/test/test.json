@@ -2,6 +2,8 @@
   "component":true,
   "usingComponents":{
     "b-test":"../../component/login/index",
-    "b-btn":"../../component/button/index"
+    "b-btn":"../../component/button/index",
+    "b-dialog": "../../../component/dialog/index",
+    "b-imgBtn":"../../../component/image-button/index"
   }
 }

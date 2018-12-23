@@ -39,6 +39,10 @@ Component({
     margin:{
       type: String,
       value: "0 auto 30rpx"
+    },
+    padding: {
+      type: String,
+      value: ""
     }
   },
 

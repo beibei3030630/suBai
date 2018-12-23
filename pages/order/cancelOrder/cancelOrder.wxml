@@ -1,0 +1,23 @@
+<!--pages/order/cancelOrder/cancelOrder.wxml-->
+<view class="mainContainer">
+  <view class="reasoList">
+    <block wx:for="{{reasoList}}" wx:key=''>
+      <view class="reasoItem" bindtap='clickReason' data-current-index="{{index}}">
+        <view>{{item}}</view>
+        <image wx:if="{{index==currentReson}}" src="/images/icon/hook.png"></image>
+      </view>
+    </block>
+  </view>
+  <form bindsubmit='submitOtherReason'>
+    <view class="otherReason">
+      <view class="reasoItem">其他</view>
+      <view class="reasoItem">
+        <input placeholder='请填写理由' name="otherReason"></input>
+      </view>
+    </view>
+    <view class='tips'>订单成功取消后无法恢复</view>
+    <button form-type='submit' class="submitBtn">申请提交</button>
+  </form>
+</view>
+<b-mask wx:if="{{dialogFlag}}" opacity="0.3"/>
+<b-dialog wx:if="{{dialogFlag}}" bind:tapCancel="tapCancel" bind:tapConfirm="tapConfirm"/>

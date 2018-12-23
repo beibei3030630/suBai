@@ -1,7 +1,7 @@
 /* component/scroll-item/index.wxss */
 
 .itemContainer {
-  height: 200rpx;
+  height: 240rpx;
   display: flex;
   flex-direction: row;
   justify-items: center;
@@ -10,12 +10,14 @@
   width: 90%;
   margin: 0 auto;
 }
-.border--none{
-  border-bottom:0;
+
+.border--none {
+  border-bottom: 0;
 }
+
 .itemContainer .cover {
-  height: 150rpx;
-  width: 150rpx;
+  height: 180rpx;
+  width: 180rpx;
 }
 
 .itemContainer .cover image {
@@ -24,46 +26,62 @@
 }
 
 .itemContainer .itemContent {
-  margin: 20rpx 0;
   display: flex;
   flex-direction: column;
   margin-left: 20rpx;
-  height: 80%;
+  height: 175rpx;
   justify-content: space-between;
   font-size: 25rpx;
-  width: 80%;
- 
+  width: 65%;
+  position: relative;
+}
+
+.itemContent .limitHeight {
+  height: 78%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
 }
 
 .itemContent .title {
   font-size: 28rpx;
+  overflow:hidden;
+  white-space:normal; 
+  word-break:break-all;
+  text-overflow:ellipsis;
+  min-height: 1em;
+  max-height: 2.5em;
 }
 
 .itemContent .desc {
   color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: ellipsis;
+  max-height: 2.5em;
+  min-height: 1em;
 }
-
+.itemContainer .serviceContent{
+  color: #999;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  min-height: 1em;
+}
 .itemContent .price {
   color: #3bc53a;
   font-size: 28rpx;
+  height: 30rpx;
 }
 
-.itemContent .book {
+.itemContent .btn {
   font-size: 28rpx;
   padding: 5rpx 30rpx;
   border: 3rpx solid #3bc53a;
   border-radius: 34rpx;
   color: #3bc53a;
-  width:56rpx;
   height: 40rpx;
-}
-.itemContent .top{
-  display: flex;
-  flex-direction:column;
-}
-.itemContent .bottom{
- display: flex;
- flex-direction: row;
- justify-content: space-between;
- padding-right: 60rpx;
+  position: absolute;
+  right: 0rpx;
+  bottom: -15rpx;
 }

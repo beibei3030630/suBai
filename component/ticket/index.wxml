@@ -1,0 +1,14 @@
+<!--component/ticketList/index.wxml-->
+<view class="ticketItem" bindtap='onClick' data-current-index="{{index}}">
+  <view class="left">
+    <view>￥{{ticketData.price}}</view>
+    <view>{{ticketData.priceDesc}}</view>
+  </view>
+  <view class="center">
+    <view>{{ticketData.title}}</view>
+    <view>{{ticketData.starDate}}至{{ticketData.endDate}}</view>
+  </view>
+  <view class="right">
+    <image src="" wx:if="{{index!=currentIndex&&initialFlag}}"></image>
+  </view>
+</view>

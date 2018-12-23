@@ -6,13 +6,13 @@
     </block>
   </view>
   <block wx:for="{{toggleData.toggleFirstData}}" wx:key="" wx:if="{{currentTab==0}}">
-    <b-scroll-item scrollData="{{item}}" />
+    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" />
   </block>
   <block wx:for="{{toggleData.toggleSecondData}}" wx:key="" wx:if="{{currentTab==1}}">
-    <b-scroll-item scrollData="{{item}}" />
+    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" />
   </block>
   <block wx:for="{{toggleData.toggleThirdData}}" wx:key="" wx:if="{{currentTab==2}}">
-    <b-scroll-item scrollData="{{item}}" />
+    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" />
   </block>
 </view>
 <wxs module="tool">
@@ -23,7 +23,17 @@
       return ''
     }
   }
+  var filterData=function(itemData){
+    var newItemData={
+      title:itemData.goods_name,
+      desc:itemData.goods_title,
+      price:itemData.goods_price,
+      img:itemData.goods_pic
+    }
+    return newItemData
+  }
   module.exports = {
-    setActive: setActive
+    setActive: setActive,
+    filterScrollData:filterData
   }
 </wxs>

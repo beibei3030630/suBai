@@ -1,6 +1,7 @@
 {
   "component":true,
   "usingComponents":{
-    "b-scrollItem":"../../component/scroll-item/index"
+    "b-scrollItem":"../../component/scroll-item/index",
+    "b-button": "../../component/button/index"
   }
 }

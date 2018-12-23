@@ -1,0 +1,2 @@
+<!--pages/login/register/register.wxml-->
+<b-login bind:getSmsCode="getSmsCode" bind:submitRegister="submitRegister" status="register" smsCodeSucced="{{smsCodeSucced}}" submitFailed="{{submitFailed}}"/>

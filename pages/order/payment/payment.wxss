@@ -1,0 +1,75 @@
+/* pages/order/payment/payment.wxss */
+
+page {
+  background-color: #f8f8fd;
+}
+
+.paymentContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paymentContainer .content {
+  background-color: #fff;
+  width: 90%;
+  margin: 40rpx auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paymentContainer .content .top {
+  width: 80%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  border-bottom: 1rpx solid #ececec;
+  padding-top: 60rpx;
+  padding-bottom: 30rpx;
+}
+
+.top .title {
+  font-size: 34rpx;
+}
+
+.top .price {
+  margin-top: 30rpx;
+}
+
+.paymentContainer .content .tip {
+  font-size: 24rpx;
+  color: #999;
+  margin-top: 40rpx;
+}
+
+.paymentContainer .content .clock {
+  display: flex;
+  flex-direction: row;
+  margin: 30rpx 0;
+  color: #09bb07;
+}
+
+.paymentContainer .content .clock .greenStyle {
+  letter-spacing: 10rpx;
+  border: 1rpx solid #09bb07;
+  color: #09bb07;
+  padding-left: 10rpx;
+  border-radius: 15rpx;
+}
+
+.paymentContainer .content .clock .greenStyle:nth-child(1) {
+  margin-right: 15rpx;
+}
+
+.paymentContainer .content .clock .greenStyle:nth-child(2) {
+  margin-left: 15rpx;
+}
+
+.paymentContainer button {
+  width: 90%;
+  color: #fff;
+  background-color: #09bb07;
+  margin-top: 30rpx;
+}

@@ -1,0 +1,7 @@
+{
+  "component": true,
+  "usingComponents": {
+    "b-dialog": "../../../component/dialog/index",
+    "b-mask": "../../../component/mask/index"
+  }
+}

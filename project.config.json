@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 17,
 			"list": [
 				{
 					"id": -1,
@@ -90,7 +90,61 @@
 				{
 					"id": -1,
 					"name": "orderList",
-					"pathName": "pages/order/orderList"
+					"pathName": "pages/order/orderList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "cancelOrder",
+					"pathName": "pages/order/cancelOrder/cancelOrder",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "payment",
+					"pathName": "pages/order/payment/payment",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "useTicket",
+					"pathName": "pages/order/useTicket/useTicket",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "tickeList",
+					"pathName": "pages/my/ticketList/ticketList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "test1",
+					"pathName": "pages/test1/test1",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "myTickList",
+					"pathName": "pages/my/ticketList/ticketList",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "orderDetail",
+					"pathName": "pages/order/orderDetail/orderDetail",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "login",
+					"pathName": "pages/login/login",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "register",
+					"pathName": "pages/login/register/register"
 				}
 			]
 		}

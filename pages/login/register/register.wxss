@@ -1,0 +1,4 @@
+/* pages/login/register/register.wxss */
+page{
+  background-color:#f8f8fd;
+}

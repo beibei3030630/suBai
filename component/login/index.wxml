@@ -1,11 +1,26 @@
 <!--component/login/index.wxml-->
-<view class="loginContainer" wx:if="{{!authorized}}"> 
+<view class="loginContainer" wx:if="{{!authorized}}">
   <view class="logo">
-    <image src="/images/tab.jpg"></image>
-    <text>当前操作需要登录</text>
+    <image src="/images/loginLogo.png"></image>
+    <text>当前操作,需要微信登录</text>
+    <text>登陆后可进行相关业务操作</text>
   </view>
-  <view class="buttonList">
-    <b-btn content="使用微信登录" bindtap="tapLogin"/>
-    <b-btn content="返回首页" background="#fff" color="#000" border="2px solid #ececec" bindtap="tapBack"/>
+
+  <!-- login -->
+  <view class="loginBtn btnStyle" bindtap="tapLogin" wx:if="{{status=='login'}}">使用微信登录</view>
+  <!-- register -->
+  <view wx:if="{{status=='register'}}" class="registerContaier">
+    <form bindsubmit='submitRegister'>
+      <view class="btnList">
+        <input class="inputSytle" placeholder='手机号' placeholder-class='placeStyle' name="phoneNumber" maxlength="11" bindinput='_getPhoneNumber'/>
+        <view class='layout'>
+          <input class="inputSytle" placeholder='输入验证码' name="smscode" placeholder-class='placeStyle' maxlength="4" type='number' value="{{smsCodeVal}}"/>
+          <button bindtap='clickSmsBtn' class="getSmsCode" style="background-color:{{smsBtnBgc}}" disabled="{{smsBtnDisabled}}">{{smsBtnVal}}</button>
+        </view>
+      </view>
+      <button form-type='submit' class="registerBtn" disabled='{{confirmBtnDis}}' style="background-color:{{confirmBtnBgc}};color:#fff">{{confirmBtnVal}}</button>
+    </form>            
   </view>
+  <!-- 返回按钮 -->
+  <view class="backBtn btnStyle" bindtap="tapBack">返回首页</view>
 </view>

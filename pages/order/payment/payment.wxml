@@ -1,0 +1,16 @@
+<!--pages/order/payment/payment.wxml-->
+<view class="paymentContainer">
+  <view class="content">
+    <view class="top">
+      <text class="title">{{title}}</text>
+      <text class="price">￥{{price}}.00</text>
+    </view>
+    <view class="tip">支付剩余时间</view>
+    <view class="clock">
+      <view class="greenStyle">{{m}}</view>
+      :
+      <view class="greenStyle">{{s}}</view>
+    </view>
+  </view>
+  <button>确认支付</button>
+</view>

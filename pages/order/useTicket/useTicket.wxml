@@ -1,2 +1,24 @@
 <!--pages/order/useTicket/useTicket.wxml-->
-<text>pages/order/useTicket/useTicket.wxml</text>
+<view class="ticketContainer">
+  <view class="ticketList">
+    <block wx:for="{{ticketList}}" wx:key="">
+      <view class="ticketItem" bindtap='onClick' data-current-index="{{index}}">
+        <view class="left">
+          <view>￥{{item.price}}</view>
+          <view>{{item.priceDesc}}</view>
+        </view>
+        <view class="center">
+          <view>{{item.title}}</view>
+          <view>{{item.starDate}}至{{item.endDate}}</view>
+        </view>
+        <view class="right">
+          <image src="/images/icon/noSelect.png" wx:if="{{index!=currentIndex&&initialFlag}}"></image>
+          <image src="/images/icon/selected.png" wx:if="{{index==currentIndex&&moreFlag}}"></image>
+          <image src="/images/icon/noSelect.png" wx:if="{{index==currentIndex&&!moreFlag}}"></image>
+        </view>
+      </view>
+    </block>
+  </view>
+  <view class="tip">没有更多了~</view>
+  <button>不使用优惠券</button>
+</view>

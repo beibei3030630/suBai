@@ -1,0 +1,41 @@
+<!--pages/order/orderDetail/orderDetail.wxml-->
+<view class="mainContainer">
+  <view class="listContainer">
+    <view class="listItem">
+      <b-scrollItem scrollData="{{produceData}}" border="none" hasBook="{{false}}">
+        <view slot="payStatus" class="statusTip" wx:if="{{payStatus==0}}">
+          <text>待付款</text>
+          <text>剩余交易自动关闭</text>
+        </view>
+        <view slot="payStatus" class="statusTip" wx:if="{{payStatus==1}}">
+          <text>已付款</text>
+          <text>订单服务中</text>
+        </view>
+        <view slot="payStatus" class="statusTip" wx:if="{{payStatus==2}}">
+          <text>已完成</text>
+          <text>订单服务已完成</text>
+        </view>
+      </b-scrollItem>
+    </view>
+    <view class="listItem addressItem">
+      <b-list setArrow="{{false}}" border="none" title="{{namePhone}}" titleIndent="none" />
+      <text class="address">{{address}}</text>
+    </view>
+    <view class="listItem">
+      <b-list title="{{serviceTime}}" setArrow="{{false}}" titleIndent="none" />
+      <b-list title="{{order}}" setArrow="{{false}}" border="none" titleIndent="none" />
+    </view>
+    <view class="listItem colorGray" wx:if="{{ticketName}}">
+      <b-list title="{{ticketName}}" desc="{{ticketPirce}}" setArrow="{{false}}" border="none" titleIndent="none" />
+    </view>
+    <view class="listItem colorGray fontSizeSmall">
+      <block wx:for="{{orderDetail}}" wx:key=''>
+        <b-list title="{{item.title}}" desc="{{item.desc}}" setArrow="{{false}}" border="none" titleIndent="none" />
+      </block>
+    </view>
+  </view>
+  <view class="btnList" wx:if="{{payStatus==0}}">
+    <button class="cancel">取消订单</button>
+    <button class="confirmPay">付款</button>
+  </view>
+</view>
