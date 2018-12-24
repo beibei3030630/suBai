@@ -19,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log(globalData.session_id)
   },
   getSmsCode(e) {
     loginmodel.getSmsCode(e.detail.phoneNum).then(res=>{
@@ -28,8 +28,8 @@ Page({
   },
   submitRegister(e) {
     const registerData=e.detail.registerData;
-    let token=globalData.token;
-    loginmodel.submitRegister(registerData,token).then(res=>{
+    let session_id=globalData.session_id;
+    loginmodel.submitRegister(registerData,session_id).then(res=>{
       if (res.data.result==1){
         wx.showToast({
           title: res.data.message,

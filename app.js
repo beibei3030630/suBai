@@ -33,14 +33,14 @@ App({
       }
     })
     
-    // 获取用户token
-    let token=wx.getStorageSync('token');
-    if(token){
-      this.globalData.token=token
+    // 获取用户session_id
+    let session_id=wx.getStorageSync("session_id");
+    if(session_id){
+      this.globalData.session_id=session_id
     }
   },
   globalData: {
     userInfo: null,
-    token:null
+    session_id:null
   }
 })

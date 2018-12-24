@@ -22,7 +22,7 @@ Page({
   },
   tapLogin() {
     wxLoginmodel.toLogin(res => {
-      wx.setStorageSync('token', res.session_id)
+      wx.setStorageSync("session_id", "session_id="+res.session_id)
     })
   },
   //  * 生命周期函数--监听页面初次渲染完成

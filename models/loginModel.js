@@ -13,12 +13,12 @@ class loginModel extends httpP {
       url: "app/getcode?phone=" + phoneNum
     })
   }
-  submitRegister(registerData,token) {
+  submitRegister(registerData,session_id) {
     return this.request({
       url: "app/bindphone?phone=" + registerData.phoneNum + "&code=" + registerData.smsCode,
       method: 'post',
-      data:{
-        cookie: token
+      header:{
+        "cookie":session_id
       }
     })
   }

@@ -18,12 +18,14 @@ Page({
     sugData: '',
     min: "00",
     second: "00",
+    date:"2018-12-24"//日期选择器
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+  
     wx.request({
       url: 'http://mall.xinwenyifuxing.com/mallapp/orderlist',
       success(res) {
@@ -98,7 +100,6 @@ Page({
 
   },
   login(code, iv, encryptedData) {
-    console.log(code);
     console.log(iv);
     console.log(encryptedData);
     var that = this;
@@ -117,6 +118,9 @@ Page({
     locationmodel.loadCity(log, lat).then(res => {
       console.log(res)
     })
+  },
+  bindDateChange(e){
+    console.log(e.detail.value)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
