@@ -21,8 +21,8 @@ Component({
    * 组件的方法列表
    */
   methods: {
-    onGetUserInfo(event){
-        this.triggerEvent('getUserInfo',event.detail,{})
+    tapToUserInfo(event){
+      this.triggerEvent('tapToUserInfo',event.detail,{})
     }
   }
 })

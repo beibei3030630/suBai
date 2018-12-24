@@ -93,7 +93,6 @@
 /* 登录按钮 */
 
 .loginBtn {
-  color: #fff;
   background-color: #09bb07;
 }
 

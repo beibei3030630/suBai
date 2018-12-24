@@ -26,23 +26,26 @@ Page({
   onLoad: function(options) {
     wx.request({
       url: 'http://mall.xinwenyifuxing.com/mallapp/orderlist',
-      success(res){
-        // console.log(res)
+      success(res) {
+        //  console.log(res)
       }
     })
-    let that=this;
+    let that = this;
     wx.login({
-      success(res){
-        if(res.code){
+      success(res) {
+        if (res.code) {
           wx.getSetting({
-            success(res2){
-              if(res2.authSetting["scope.userInfo"]){
+            success(res2) {
+              if (res2.authSetting["scope.userInfo"]) {
                 wx.getUserInfo({
-                  success(res3){
-                    let code=res.code;
-                    let iv=res3.iv;
-                    let encryptedData=encodeURIComponent(res.encryptedData);
-                    that.login(code,iv,encryptedData);
+                  success(res3) {
+                    let code = res.code;
+                    let iv = res3.iv;
+                    let encryptedData = encodeURIComponent(res3.encryptedData);
+                    // console.log(code);
+                    // console.log(iv);
+                    // console.log(encryptedData);
+                    that.login(code, iv, encryptedData);
                   }
                 })
               }
@@ -92,19 +95,20 @@ Page({
     //     console.log(err)
     //   }
     // })
-    
+
   },
-  login(code,iv,encryptedData){
-    var that=this;
+  login(code, iv, encryptedData) {
+    console.log(code);
+    console.log(iv);
+    console.log(encryptedData);
+    var that = this;
     wx.request({
-      url: 'http://mall.xinwenyifuxing.com/mallapp/app/weixinlogin',
-      method:'post',
-      data:{
-        code:code,
-        iv:iv,
-        encryptedData:encryptedData
+      url: 'http://mall.xinwenyifuxing.com/mallapp/app/weixinlogin?code='+code+"&iv="+iv+"&encrytedData="+encryptedData,
+      method: 'post',
+      header:{
+        "content-type":"application/json"
       },
-      success(res){
+      success(res) {
         console.log(res)
       }
     })

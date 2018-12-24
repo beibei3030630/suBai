@@ -41,6 +41,14 @@ Component({
    * 组件的方法列表
    */
   methods: {
+    // 登陆按钮绑定事件
+    tapToUserInfo(){
+      this.triggerEvent("tapLogin",{},{})
+    },
+    tapToUserInfo(){
+      this.triggerEvent("tapToUserInfo", {}, {})
+    },
+    //以下为注册的业务逻辑
     //  注册不成功 触动此函数 注册成功的话 就在页面中跳转了
     submitFailed() {
       this.setData({
@@ -83,6 +91,7 @@ Component({
         }, {})
       }
     },
+    
     _cutDown() {
       const that = this;
       let count = 60;

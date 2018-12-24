@@ -1,23 +1,63 @@
 import {
   httpP
 } from "../utils/util-p.js";
+import {
+  wxLogin
+} from "../utils/util-login.js";
+import {
+  httpData
+} from "../config.js";
 class loginModel extends httpP {
   getSmsCode(phoneNum) {
     return this.request({
       url: "app/getcode?phone=" + phoneNum
     })
   }
-  submitRegister(registerData){
+  submitRegister(registerData,token) {
     return this.request({
-      url:"app/bindphone",
-      method:'post',
+      url: "app/bindphone?phone=" + registerData.phoneNum + "&code=" + registerData.smsCode,
+      method: 'post',
       data:{
-        phone: registerData.phoneNum,
-        code: registerData.smsCode
+        cookie: token
       }
     })
   }
 }
+
+class wxLoginModel extends wxLogin {
+  toLogin(sCallBack) {
+    this.loginUtil((loginData) => {
+      wx.request({
+        url: httpData.appurl + "app/weixinlogin",
+        header: {
+          "content-type": "application/json"
+        },
+        data: loginData,
+        success(res) {
+          sCallBack(res.data)
+        }
+      })
+    })
+  }
+}
+
+// class firstLoginModel extends wxLogin {
+//   toFirstLogin(sCallBack) {
+//     this.firstLoginUtil((loginData) => {
+//       wx.request({
+//         url: httpData.appurl + "app/weixinlogin",
+//         header: {
+//           "content-type": "application/json"
+//         },
+//         data: loginData,
+//         success(res) {
+//           sCallBack(res.data)
+//         }
+//       })
+//     })
+//   }
+// }
 export {
-  loginModel
+  loginModel,
+  wxLoginModel
 }

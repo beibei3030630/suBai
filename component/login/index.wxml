@@ -7,7 +7,10 @@
   </view>
 
   <!-- login -->
-  <view class="loginBtn btnStyle" bindtap="tapLogin" wx:if="{{status=='login'}}">使用微信登录</view>
+  <!-- 第一次登陆 使用图片按钮 拿到userInfo。因为小程序已经不支持直接调用用wx.getUserInfo,需要通过点击button后再触发wx.getUserInfo。通过wx.getUserInfo拿到iv，encrypted再去调用服务器的wxlogin API-->
+  <b-imgBtn wx:if="{{status=='login'}}" open-type="getUserInfo"  bind:tapToUserInfo="tapToUserInfo" class="loginBtn btnStyle">
+    <view slot="img" style="color:#fff;">使用微信登录</view>  
+  </b-imgBtn>
   <!-- register -->
   <view wx:if="{{status=='register'}}" class="registerContaier">
     <form bindsubmit='submitRegister'>

@@ -1,4 +1,4 @@
 <!--component/image-button/inde.wxml-->
-<button class="btnCmp" open-type='{{openType}}' bind:getuserinfo="onGetUserInfo" plain='{{true}}'>
+<button class="btnCmp" open-type='{{openType}}' bind:getuserinfo="tapToUserInfo" plain='{{true}}'>
   <slot name="img"></slot>
 </button>

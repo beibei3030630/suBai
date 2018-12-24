@@ -3,6 +3,7 @@ import {
   loginModel
 } from "../../../models/loginModel.js";
 const loginmodel=new loginModel();
+let globalData = getApp().globalData;
 Page({
 
   /**
@@ -18,7 +19,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+
   },
   getSmsCode(e) {
     loginmodel.getSmsCode(e.detail.phoneNum).then(res=>{
@@ -27,7 +28,8 @@ Page({
   },
   submitRegister(e) {
     const registerData=e.detail.registerData;
-    loginmodel.submitRegister(registerData).then(res=>{
+    let token=globalData.token;
+    loginmodel.submitRegister(registerData,token).then(res=>{
       if (res.data.result==1){
         wx.showToast({
           title: res.data.message,

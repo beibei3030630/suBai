@@ -1,6 +1,7 @@
 {
   "component": true,
   "usingComponents": {
-    "b-btn":"../button/index"
+    "b-btn":"../button/index",
+    "b-imgBtn":"../image-button/index"
   }
 }

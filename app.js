@@ -32,8 +32,15 @@ App({
         }
       }
     })
+    
+    // 获取用户token
+    let token=wx.getStorageSync('token');
+    if(token){
+      this.globalData.token=token
+    }
   },
   globalData: {
-    userInfo: null
+    userInfo: null,
+    token:null
   }
 })
