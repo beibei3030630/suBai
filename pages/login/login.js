@@ -22,6 +22,7 @@ Page({
   },
   tapLogin() {
     wxLoginmodel.toLogin(res => {
+      console.log(res)
       wx.setStorageSync("session_id", "session_id="+res.session_id)
     })
   },

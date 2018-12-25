@@ -27,6 +27,7 @@ image {
   display: flex;
   flex-direction: row;
   justify-content: baseline;
+
 }
 .leftContent .img{
   width: 70rpx;
@@ -42,6 +43,12 @@ image {
 .singleList .leftContent{
   display: flex;
   flex-direction: row;
+  align-items: center;
+}
+.rightContent{
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
 }
 .rightContent .desc{

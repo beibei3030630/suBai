@@ -43,9 +43,6 @@ Component({
   methods: {
     // 登陆按钮绑定事件
     tapToUserInfo(){
-      this.triggerEvent("tapLogin",{},{})
-    },
-    tapToUserInfo(){
       this.triggerEvent("tapToUserInfo", {}, {})
     },
     //以下为注册的业务逻辑

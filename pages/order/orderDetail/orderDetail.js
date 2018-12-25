@@ -5,6 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
+   
     produceData: {
       img: "/images/1.jpg",
       title: "星际家 保洁包年 pro-A3 包年体验",
@@ -12,10 +13,9 @@ Page({
     },
     // 0未付款， 1已付款 2已完成
     payStatus: 0,
-    defaultDate: null,
     namePhone: "项云青 18770890623",
     address: "上海市长宁区东华大学国家大学科技园（福泉路)金钟路658弄",
-    serviceTime: "服务时间:",
+    serviceTime: "服务时间 : 2018-12-25 10:12",
     order: "订单备注：无",
     ticketName: "苏百圣诞优惠券",
     ticketPirce: "-￥70",
@@ -43,15 +43,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let dateObj = new Date();
-    let currentMonth=dateObj.getMonth()+1;
-    let currentDate = dateObj.getFullYear() + "/" + currentMonth+"/"+dateObj.getDate();
-    console.log(currentDate)
-    this.setData({
-      defaultDate: currentDate
-    })
+  
   },
-
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

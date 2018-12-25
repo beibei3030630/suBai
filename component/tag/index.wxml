@@ -1,0 +1,2 @@
+<!--component/tag/index.wxml-->
+    <view class="tag" id="{{listId}}" bindtap='clickTag'>{{tagContent}}</view>

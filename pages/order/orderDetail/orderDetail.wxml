@@ -22,10 +22,9 @@
       <text class="address">{{address}}</text>
     </view>
     <view class="listItem">
-      <b-list  setArrow="{{false}}" titleIndent="none">
-          <picker slot="leftContentSlot" mode="date" value="date" start="2015-09-01" end="2017-09-01" bindchange="bindDateChange">服务时间：{{defaultDate}}</picker>
-      </b-list>
+      <b-list  title="{{serviceTime}}" setArrow="{{false}}" titleIndent="none"/>
       <b-list title="{{order}}" setArrow="{{false}}" border="none" titleIndent="none" />
+      <!-- <picker slot="leftContentSlot" mode="date" value="{{defaultDate}}" start="{{startDate}}" end="{{endDate}}" bindchange="bindDateChange">服务时间：{{defaultDate}}</picker> -->
     </view>
     <view class="listItem colorGray" wx:if="{{ticketName}}">
       <b-list title="{{ticketName}}" desc="{{ticketPirce}}" setArrow="{{false}}" border="none" titleIndent="none" />

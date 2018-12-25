@@ -58,7 +58,6 @@ page {
 }
 
 .btnList .cancel {
-  border: 0 !important;
   width: 50%;
   border-radius: 0 !important;
   color: #000;

@@ -10,6 +10,7 @@
     "pages/order/useTicket/useTicket",
     "pages/order/cancelOrder/cancelOrder",
     "pages/order/payment/payment",
+    "pages/order/paymentStatus/paymentStatus",
     "pages/order/orderDetail/orderDetail",
     "pages/my/my",
     "pages/my/contact/contact",

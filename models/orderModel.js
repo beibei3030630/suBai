@@ -10,6 +10,11 @@ class orderModel extends httpP {
       }
     })
   }
+  getServiceTime(service_day){
+    return this.request({
+      url:"servicetimeList?service_day="+service_day
+    })
+  }
 }
 export {
   orderModel

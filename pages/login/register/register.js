@@ -2,7 +2,7 @@
 import {
   loginModel
 } from "../../../models/loginModel.js";
-const loginmodel=new loginModel();
+const loginmodel = new loginModel();
 let globalData = getApp().globalData;
 Page({
 
@@ -11,35 +11,37 @@ Page({
    */
 
   data: {
-    smsCodeSucced:null,
-    submitFailed:false
+    smsCodeSucced: null,
+    submitFailed: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(globalData.session_id)
+
+    console.log(typeof(globalData.session_id))
   },
   getSmsCode(e) {
-    loginmodel.getSmsCode(e.detail.phoneNum).then(res=>{
+    loginmodel.getSmsCode(e.detail.phoneNum).then(res => {
       console.log(res)
     })
   },
   submitRegister(e) {
-    const registerData=e.detail.registerData;
-    let session_id=globalData.session_id;
-    loginmodel.submitRegister(registerData,session_id).then(res=>{
-      if (res.data.result==1){
+    const registerData = e.detail.registerData;
+    let session_id = globalData.session_id;
+    console.log(session_id);
+    loginmodel.submitRegister(registerData, session_id).then(res => {
+      if (res.data.result == 1) {
         wx.showToast({
           title: res.data.message,
-          icon:'success'
+          icon: 'success'
         })
         this.toHome();
-      }else if(res.data.result==-1){
+      } else if (res.data.result == -1) {
         wx.showToast({
           title: res.data.message,
-          icon:'none'
+          icon: 'none'
         })
         this.setData({
           // 每次都要取自己相反的值才能触动组件中的修改确认按钮样式的事件
@@ -48,12 +50,11 @@ Page({
       }
     })
   },
-  toHome(){
+  toHome() {
     setInterval(
-     wx.switchTab({
-       url: '/pages/home/home',
-     })
-    ,1000)
+      wx.switchTab({
+        url: '/pages/home/home',
+      }), 1000)
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

@@ -6,10 +6,20 @@
       <b-scrollItem scrollData="{{produceData}}" hasBook="{{false}}" border="none" />
     </view>
     <view class="list-item addAddress">
-      <b-list title="添加服务地址" detail="还没有服务地址，点击添加地址" border="none" fontSize="60rpx"  bind:onClick="toAddressList"/>
+      <b-list title="添加服务地址" detail="还没有服务地址，点击添加地址" border="none" fontSize="60rpx" bind:onClick="toAddressList" />
     </view>
     <view class="list-item">
-      <b-list title="服务时间" desc="选择服务时间" borderStyle="1rpx solid #f4f4f4" />
+      <b-list title="服务时间" borderStyle="1rpx solid #f4f4f4" setArrow="{{false}}">
+        <picker class="datePicker" slot="rightContentSlot" mode="date" value='{{pickerDate}}' bindchange="bindDateChange">服务时间：{{pickerDate}}</picker>
+      </b-list>
+      <view class="tagContainer" wx:if="{{serviceTimeList.length!=0}}">
+        <block wx:for="{{serviceTimeList}}" wx:key="">
+          <b-tag tagContent="{{item.service_time}}" listId="{{item.service_id}}" bind:clickTag="getServiceId"/>
+        </block>
+      </view>
+      <view class="serviceTips" wx:if="{{serviceTimeList.length==0&&pickedFlag}}">
+        服务时间段以约满，请重新选择服务日期
+      </view>
       <b-list title="订单备注" desc="选填、可填写服务需求" border="none" />
     </view>
     <view class="list-item">

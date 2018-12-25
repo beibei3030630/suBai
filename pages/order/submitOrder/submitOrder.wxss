@@ -6,6 +6,29 @@ page{
   display: flex;
   flex-direction: column;
 }
+/* 服务时间选择器 */
+.datePicker{
+  font-size: 28rpx;
+  padding-right: 5rpx;
+  color: #aaa;  
+}
+/* 服务时间标签 */
+.list-item .tagContainer{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  margin: 30rpx auto;
+  width: 95%;
+}
+.list-item  .serviceTips{
+  font-size: 28rpx;
+  color: #d4d4d4;
+  margin:  60rpx auto;
+  width: 90%;
+  text-align:center;
+}
 .list-wrap{
   width: 100%;
 }
