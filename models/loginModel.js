@@ -13,26 +13,23 @@ class loginModel extends httpP {
       url: "app/getcode?phone=" + phoneNum
     })
   }
-  submitRegister(registerData,session_id) {
-    console.log(session_id)
-    
+  submitRegister(registerData, session_id) {
     wx.request({
       url: "http://mall.xinwenyifuxing.com/mallapp/app/bindphone?phone=" + registerData.phoneNum + "&code=" + registerData.smsCode,
       method: "post",
       header: {
-        'content-type': 'application/json', // 默认值
-        'cookie': session_id //试一下
+        'content-type':'application/json', // 默认值
+        'cookie':session_id //试一下
       },
       success(res) {
         console.log(res.data)
       }
     })
-
-
     // return this.request({
     //   url: "app/bindphone?phone=" + registerData.phoneNum + "&code=" + registerData.smsCode,
     //   method: "post",
     //   header:{
+    //     "content-type":"application/json",
     //     'cookie':session_id //试一下
     //   }
     // })

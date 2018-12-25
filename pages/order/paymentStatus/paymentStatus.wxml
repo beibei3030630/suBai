@@ -1,2 +1,17 @@
 <!--pages/order/paymentStatus/paymentStatus.wxml-->
-<text>pages/order/paymentStatus/paymentStatus.wxml</text>
+<view class="mainContainer">
+  <view class="markingImg">
+    <image src="/images/success_statue.png" wx:if="{{paymentStatue}}"></image>
+    <image src="/images/failed_statue.png" wx:else></image>
+  </view>
+  <view class="paymentInfo" wx:if="{{paymentStatue}}">
+    <view class="paymentTitle">{{paymentTitle}}</view>
+    <view class="paymentTip">{{paymentTip}}</view>
+  </view>
+  <view class="paymentInfo" wx:else>
+    <view class="paymentTitle">{{paymentTitle}}</view>
+    <view class="paymentTip">{{paymentTip}}</view>
+  </view>
+  <b-btn content="查看订单"/>
+  <b-btn content="返回首页"/>
+</view>
