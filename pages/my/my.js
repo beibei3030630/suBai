@@ -1,11 +1,16 @@
 // pages/my/my.js
-Page({
+import {
+  wxLoginModel
+}
+  from "../../models/loginModel.js";
+let wxLoginmodel = new wxLoginModel();
 
+Page({
   /**
    * 页面的初始数据
    */
   data: {
-    userInfo: null,
+    userInfo:null,
     authorized: false,
     mainList: [{
         icon: "/images/listTest.png",
@@ -44,11 +49,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    this.userAuthorize();
+     this.userAuthorize();
   },
   // 转到登录页面
   toLogin(){
-    wx.redirectTo({
+    wx.navigateTo({
       url: '../login/login',
     })
   },
@@ -58,13 +63,24 @@ Page({
       success: res => {
         const scope = res.authSetting['scope.userInfo'];
         if (scope) {
-          wx.getUserInfo({
-            success: res => {
-              this.setData({
-                userInfo: res.userInfo,
-                authorized: true
-              })
-            }
+          // getuserinfo里面没有绑定的手机号 所以用接口返回的数据
+          // wx.getUserInfo({
+          //   success: res => {
+          //     this.setData({
+          //       userInfo: res.userInfo,
+          //       authorized: true
+          //     })
+          //   }
+          // })
+          wxLoginmodel.toLogin(res => {
+           this.setData({
+             userInfo: {
+               nickName: res.shopUser.username,
+               avatarUrl: res.shopUser.head_img,
+               phoneNum: res.shopUser.phone
+             },
+             authorized:true
+           })
           })
         }
       }
@@ -86,22 +102,22 @@ Page({
   //   }
   // },
   toContact(){
-    wx.navigateTo({
-      url: './contact/contact',
-    })
+    // wx.navigateTo({
+    //   url: './contact/contact',
+    // })
+    
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
   },
 
   /**

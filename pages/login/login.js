@@ -11,7 +11,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    prevPage:null,
+    prevPage: null,
     tempData: "https://www.2cto.com/kf/201808/770331.html"
   },
 
@@ -19,19 +19,48 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    let pages = getCurrentPages(); // 获取页面栈
-    this.data.prevPage = pages[pages.length - 2];
-    
-    console.log(pages.length);
-   },
+
+  },
   tapLogin(e) {
     wxLoginmodel.toLogin(res => {
-      console.log(res)
       wx.setStorageSync("session_id", "session_id=" + res.session_id)
-      
+      let that=this;
+      wx.showToast({
+        title: '授权成功，正在跳转...',
+        icon: 'none',
+        success() {
+          if (res.shopUser.phone) {
+            that._loginSuccess(res)
+          } else {
+            that._skipRegister()
+          }
+        }
+      })
     })
   },
-  gohome(){
+  _loginSuccess(resData) {
+    let pages = getCurrentPages();
+    let prevPage = pages[pages.length - 2];
+    prevPage.setData({
+      userInfo: {
+        nickName: resData.shopUser.username,
+        avatarUrl: resData.shopUser.head_img,
+        phoneNum: resData.shopUser.phone
+      },
+      authorized: true
+    })
+    setTimeout(function() {
+      wx.navigateBack({
+        delta: 1
+      })
+    }, 2000)
+  },
+  _skipRegister() {
+    wx.navigateTo({
+      url: './register/register'
+    })
+  },
+  gohome() {
     wx.switchTab({
       url: '/pages/home/home',
     })

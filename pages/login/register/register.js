@@ -18,8 +18,7 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-  },
+  onLoad: function(options) {},
   getSmsCode(e) {
     loginmodel.getSmsCode(e.detail.phoneNum).then(res => {
       console.log(res)
@@ -30,12 +29,16 @@ Page({
     let session_id = globalData.session_id;
     console.log(session_id);
     loginmodel.submitRegister(registerData, session_id).then(res => {
+      console.log(res)
       if (res.data.result == 1) {
+        let that=this;
         wx.showToast({
           title: res.data.message,
-          icon: 'success'
+          icon: 'success',
+          success(){
+            that._successRegister()
+          }
         })
-        this.toHome();
       } else if (res.data.result == -1) {
         wx.showToast({
           title: res.data.message,
@@ -48,12 +51,14 @@ Page({
       }
     })
   },
-  toHome() {
-    setInterval(
+  _successRegister(){
+    setTimeout(function () {
       wx.switchTab({
-        url: '/pages/home/home',
-      }), 1000)
+        url: '/pages/my/my',
+      })
+    }, 1500)
   },
+  
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -3,16 +3,17 @@ import {
 } from "../config.js";
 class httpP {
   request({
-    url: url,
+    url:url,
     data = {},
-    method = "get"
+    method = "get",
+    header = {
+      "content-type": "application/json"
+    }
   }) {
     return new Promise((resolve, reject) => {
       wx.request({
         url: httpData.appurl + url,
-        header: {
-          "content-type": "application/json"
-        },
+        header: header,
         method: method,
         data: data,
         success(res) {
@@ -48,7 +49,7 @@ class httpP {
           }
         },
         fail(err) {
-            reject(err)
+          reject(err)
         }
       })
     })

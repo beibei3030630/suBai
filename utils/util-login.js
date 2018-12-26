@@ -17,6 +17,18 @@ class wxLogin {
                     sCallBack(loginData);
                   }
                 })
+              }else{
+                wx.showToast({
+                  title: '授权失败，正在跳转...',
+                  icon:'none',
+                  success(){
+                    setTimeout(function(){
+                      wx.navigateBack({
+                        delta:1
+                      })
+                    },2000)
+                  }
+                })
               }
             }
           })

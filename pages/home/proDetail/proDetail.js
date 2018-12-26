@@ -21,9 +21,9 @@ Page({
     homemodel.getProDetail(id).then(res => console.log(res.data))
   },
   toOrder(){
-    wx.navigateTo({
-      url: '../../order/submitOrder/submitOrder',
-    })
+    // wx.navigateTo({
+    //   url: '../../order/submitOrder/submitOrder',
+    // })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

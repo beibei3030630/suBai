@@ -10,7 +10,8 @@
   </view>
   <view class="listWrap">
     <view class="listItem">
-      <b-list title="手机号" desc="绑定手机号" borderStyle="2rpx solid #ececec" setArrow="{{false}}" descIndent="none" />
+      <b-list wx:if="{{!userInfo.phoneNum}}" title="手机号"  desc="绑定手机号" borderStyle="2rpx solid #ececec" setArrow="{{false}}" descIndent="none" />
+      <b-list wx:else title="手机号"  desc="{{userInfo.phoneNum}}" borderStyle="2rpx solid #ececec" setArrow="{{false}}" descIndent="none" />
       <b-list title="我的地址" borderStyle="2rpx solid #ececec" />
       <b-list title="优惠券" border="none" />
     </view>
