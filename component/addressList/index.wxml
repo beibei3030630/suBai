@@ -1,0 +1,9 @@
+<!--component/addressList/index.wxml-->
+<view class="addressList">
+  <block wx:for="{{addressList}}" wx:key=''>
+    <view class="singleAddress">
+      <image src="/images/icon/local.png"/>
+      <view>{{item}}</view>
+    </view>
+  </block>
+</view>

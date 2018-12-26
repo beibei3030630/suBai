@@ -1,10 +1,8 @@
 <!--pages/my/my.wxml-->
 <view class="mainContainer">
-  <view class="unauthroize  userInfo" wx:if="{{!authorized}}">
-    <b-button open-type='getUserInfo' bind:getUserInfo="onGetUserInfo" class="clickMe">
+  <view class="unauthroize  userInfo" wx:if="{{!authorized}}" bindtap='toLogin'>
       <image src="/images/tab.jpg" slot="img" />
-    </b-button>
-    <text>点击登录</text>
+      <text>点击登录</text>
   </view>
   <view class="authorize userInfo" wx:if="{{authorized}}">
     <image src="{{userInfo.avatarUrl}}"></image>
@@ -14,10 +12,10 @@
     <view class="listItem">
       <b-list title="手机号" desc="绑定手机号" borderStyle="2rpx solid #ececec" setArrow="{{false}}" descIndent="none" />
       <b-list title="我的地址" borderStyle="2rpx solid #ececec" />
-      <b-list title="优惠券" border="none"/>
+      <b-list title="优惠券" border="none" />
     </view>
     <view class="listItem">
-      <b-list title="联系客服" border="none" bind:onClick="toContact"/>
+      <b-list title="联系客服" border="none" bind:onClick="toContact" />
     </view>
   </view>
 </view>

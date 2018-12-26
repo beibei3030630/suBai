@@ -25,5 +25,5 @@
     </form>            
   </view>
   <!-- 返回按钮 -->
-  <view class="backBtn btnStyle" bindtap="tapBack">返回首页</view>
+  <view class="backBtn btnStyle" bindtap="gohome">返回首页</view>
 </view>

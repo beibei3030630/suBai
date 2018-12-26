@@ -1,3 +1,3 @@
 <!--pages/login/login.wxml-->
-<b-login status="login" bind:tapToUserInfo="tapLogin" />
+<b-login status="login" bind:tapToUserInfo="tapLogin" bind:gohome="gohome" />
 

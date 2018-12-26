@@ -1,2 +1,13 @@
 <!--pages/order/mesgBoard/mesgBoard.wxml-->
-<text>pages/order/mesgBoard/mesgBoard.wxml</text>
+<view class="mainContainer">
+  <view class="title">填写服务需求</view>
+  <form bindsubmit='submitMsgBoard'>
+    <view class="textareaContainer">
+      <textarea placeholder='请在此写下您的其他需求...' placeholder-class='textareaPla' maxlength="200" bindinput="inputTextArea" name="remark"></textarea>
+      <view class="tip">{{currentLen}}/200</view>
+    </view>
+    <view class="confirmBtn">
+      <button form-type='submit'>确定</button>
+    </view>
+  </form>
+</view>

@@ -11,19 +11,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    prevPage:null,
+    tempData: "https://www.2cto.com/kf/201808/770331.html"
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
-  },
-  tapLogin() {
+    let pages = getCurrentPages(); // 获取页面栈
+    this.data.prevPage = pages[pages.length - 2];
+    
+    console.log(pages.length);
+   },
+  tapLogin(e) {
     wxLoginmodel.toLogin(res => {
       console.log(res)
-      wx.setStorageSync("session_id", "session_id="+res.session_id)
+      wx.setStorageSync("session_id", "session_id=" + res.session_id)
+      
+    })
+  },
+  gohome(){
+    wx.switchTab({
+      url: '/pages/home/home',
     })
   },
   //  * 生命周期函数--监听页面初次渲染完成

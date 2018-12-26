@@ -5,13 +5,15 @@
     <image src="/images/failed_statue.png" wx:else></image>
   </view>
   <view class="paymentInfo" wx:if="{{paymentStatue}}">
-    <view class="paymentTitle">{{paymentTitle}}</view>
-    <view class="paymentTip">{{paymentTip}}</view>
+    <view class="paymentTitle">{{successTitle}}</view>
+    <view class="paymentTip">{{successTip}}</view>
   </view>
   <view class="paymentInfo" wx:else>
-    <view class="paymentTitle">{{paymentTitle}}</view>
-    <view class="paymentTip">{{paymentTip}}</view>
+    <view class="paymentTitle">{{failTitle}}</view>
+    <view class="paymentTip">{{failTip}}</view>
   </view>
-  <b-btn content="查看订单"/>
-  <b-btn content="返回首页"/>
+  <view style="width:100%;">
+    <b-btn  content="查看订单" bind:tapBtn="checkOrder"/>
+    <b-btn class="goBackBtn" bind:tapBtn="goHome" background="#fff" color="#000" border="1rpx solid #e4e4e4" content="返回首页" />
+  </view>
 </view>

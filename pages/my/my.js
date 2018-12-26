@@ -46,6 +46,12 @@ Page({
   onLoad: function(options) {
     this.userAuthorize();
   },
+  // 转到登录页面
+  toLogin(){
+    wx.redirectTo({
+      url: '../login/login',
+    })
+  },
   // 判断是否授权 刷新时用
   userAuthorize() {
     wx.getSetting({
@@ -64,24 +70,21 @@ Page({
       }
     })
   },
-  onGetUserInfo(e) {
-    const userInfo = e.detail.userInfo;
-    if (userInfo) {
-      this.setData({
-        userInfo,
-        authorized: true
-      })
-      wx.setStorage({
-        key: 'loginStatue',
-        data: 'authorize',
-      })
-    } else {
-      wx.showToast({
-        title: '授权失败',
-        icon: "none"
-      })
-    }
-  },
+  // 这里不用授权登录,跳转到登录页面
+  // onGetUserInfo(event) {
+  //   let userInfo = event.detail.userInfo;
+  //   if (userInfo) {
+  //     this.setData({
+  //       userInfo,
+  //       authorized: true
+  //     })
+  //   } else {
+  //     wx.showToast({
+  //       title: '授权失败',
+  //       icon: "none"
+  //     })
+  //   }
+  // },
   toContact(){
     wx.navigateTo({
       url: './contact/contact',

@@ -20,7 +20,7 @@
         </view>
         <view class="inputItem">
           <text>服务面积</text>
-          <text bindtap='chooseArea'>{{areaVal}}</text>
+          <input class="areafont" bindtap='chooseArea' name="area" value="{{areaVal}}"/>
         </view>
     </view>
     <button form-type='submit' class="saveBtn">保存</button>

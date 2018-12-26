@@ -1,1 +1,62 @@
 /* pages/order/mesgBoard/mesgBoard.wxss */
+
+page {
+  background-color: #f9f8fd;
+}
+
+.mainContainer {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.title {
+  font-size: 30rpx;
+  margin: 30rpx;
+  color: #999;
+}
+
+.textareaContainer {
+  border-top: 1rpx solid #eee;
+  border-bottom: 1rpx solid #eee;
+  background: #fff;
+  position: relative;
+  height: 340rpx;
+}
+
+.textareaContainer .tip {
+  font-size: 28rpx;
+  color: #bbb;
+  position: absolute;
+  right: 20rpx;
+  bottom: 20rpx;
+}
+
+textarea {
+  padding: 20rpx;
+  box-sizing: border-box;
+  width: 100%;
+  color: #666;
+  font-size: 28rpx;
+}
+
+.textareaPla {
+  background-color: #bbb;
+  font-size: 30rpx;
+}
+
+.confirmBtn {
+  margin-top: 60rpx;
+  width: 100%;
+}
+
+.confirmBtn button {
+  width: 90%;
+  background-color: #09ba07;
+  color: #fff;
+  border-radius: 25rpx;
+  font-size: 38rpx;
+  letter-spacing: 24rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+}

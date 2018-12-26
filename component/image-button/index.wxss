@@ -1,6 +1,9 @@
 /* component/image-button/inde.wxss */
-.btnCmp{
- border: none !important;
- padding: 0 !important;
- color: #fff;
+
+.btnCmp {
+  border: none !important;
+  padding: 0 !important;
+  color: #fff;
+  font-size: 35rpx;
+  line-height: 95rpx;
 }

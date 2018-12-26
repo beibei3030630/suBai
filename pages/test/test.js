@@ -20,45 +20,46 @@ Page({
     second: "00",
     date:"2018-12-24"//日期选择器
   },
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
   
-    wx.request({
-      url: 'http://mall.xinwenyifuxing.com/mallapp/orderlist',
-      success(res) {
-        //  console.log(res)
-      }
-    })
-    let that = this;
-    wx.login({
-      success(res) {
-        if (res.code) {
-          wx.getSetting({
-            success(res2) {
-              if (res2.authSetting["scope.userInfo"]) {
-                wx.getUserInfo({
-                  success(res3) {
-                    let code = res.code;
-                    let iv = res3.iv;
-                    let encryptedData = encodeURIComponent(res3.encryptedData);
-                    // console.log(code);
-                    // console.log(iv);
-                    // console.log(encryptedData);
-                    that.login(code, iv, encryptedData);
-                  }
-                })
-              }
-            }
-          })
-        }
-      }
-    })
-    // locationmodel.authorize(res => {
-    //   this.loadCity(res.longitude, res.latitude)
-    // });
+    // wx.request({
+    //   url: 'http://mall.xinwenyifuxing.com/mallapp/orderlist',
+    //   success(res) {
+    //     //  console.log(res)
+    //   }
+    // })
+    locationmodel.authorize(res => {
+      this.loadCity(res.longitude, res.latitude)
+    });
+    // let that = this;
+    // wx.login({
+    //   success(res) {
+    //     if (res.code) {
+    //       wx.getSetting({
+    //         success(res2) {
+    //           if (res2.authSetting["scope.userInfo"]) {
+    //             wx.getUserInfo({
+    //               success(res3) {
+    //                 let code = res.code;
+    //                 let iv = res3.iv;
+    //                 let encryptedData = encodeURIComponent(res3.encryptedData);
+    //                 // console.log(code);
+    //                 // console.log(iv);
+    //                 // console.log(encryptedData);
+    //                 that.login(code, iv, encryptedData);
+    //               }
+    //             })
+    //           }
+    //         }
+    //       })
+    //     }
+    //   }
+    // })
+    
     // wx.login({
     //   success: function(res) {
     //     test.request({
@@ -99,6 +100,43 @@ Page({
     // })
 
   },
+  chooseAddress(e){
+    console.log(e);
+  },
+  bindKeyInput: function (e) {
+    var that = this;
+    // 新建百度地图对象 
+    var BMap = new bmap.BMapWX({
+      ak: '9iD7G2tITTOivSZRpZN7xlvjqC5bf83b'
+    });
+    var fail = function (data) {
+      console.log(data)
+    };
+    var success = function (data) {
+      console.log(data)
+      var sugData = '';
+      for (var i = 0; i < data.result.length; i++) {
+        sugData = sugData + data.result[i].name + '\n';
+      }
+      that.setData({
+        sugData: sugData
+      });
+      
+    }
+    // 发起suggestion检索请求 
+    BMap.suggestion({
+      query: e.detail.value,
+      region: '上海市',
+      city_limit: true,
+      fail: fail,
+      success: success
+    });
+  },
+  loadCity(log, lat) {
+    locationmodel.loadCity(log, lat).then(res => {
+      console.log(res)
+    })
+  },
   login(code, iv, encryptedData) {
     console.log(iv);
     console.log(encryptedData);
@@ -114,11 +152,7 @@ Page({
       }
     })
   },
-  loadCity(log, lat) {
-    locationmodel.loadCity(log, lat).then(res => {
-      console.log(res)
-    })
-  },
+  
   bindDateChange(e){
     console.log(e.detail.value)
   },
@@ -164,33 +198,7 @@ Page({
 
   },
 
-  bindKeyInput: function(e) {
-    var that = this;
-    // 新建百度地图对象 
-    var BMap = new bmap.BMapWX({
-      ak: 'I95XYSppFZGnotARfNqleak4HuH3VtFW'
-    });
-    var fail = function(data) {
-      console.log(data)
-    };
-    var success = function(data) {
-      var sugData = '';
-      for (var i = 0; i < data.result.length; i++) {
-        sugData = sugData + data.result[i].name + '\n';
-      }
-      that.setData({
-        sugData: sugData
-      });
-    }
-    // 发起suggestion检索请求 
-    BMap.suggestion({
-      query: e.detail.value,
-      region: '上海市',
-      city_limit: true,
-      fail: fail,
-      success: success
-    });
-  },
+ 
   onTest: function() {
     wx.login({
       success: function(res) {

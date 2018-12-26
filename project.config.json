@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 18,
+			"current": 19,
 			"list": [
 				{
 					"id": -1,
@@ -152,6 +152,11 @@
 					"name": "paymentStatus",
 					"pathName": "pages/order/paymentStatus/paymentStatus",
 					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "mesgBoard",
+					"pathName": "pages/order/mesgBoard/mesgBoard"
 				}
 			]
 		}

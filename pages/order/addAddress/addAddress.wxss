@@ -35,13 +35,16 @@ page {
   color: #808487;
   width: 70%;
 }
-
+.inputItem .areafont{
+  color: #808487;
+}
 .saveBtn {
   margin-top: 80rpx;
   width: 90%;
   background-color: #09bb07;
   color: #fff;
 }
+
 
 /* 面积选择框 */
 

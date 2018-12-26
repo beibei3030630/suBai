@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    currentLen:0
   },
 
   /**
@@ -14,7 +14,16 @@ Page({
   onLoad: function (options) {
 
   },
-
+  inputTextArea(e){
+    let textAreaLen=e.detail.value.length;
+    this.setData({
+      currentLen:textAreaLen
+    })
+  },
+  submitMsgBoard(e){
+    let remark=e.detail.value.remark;
+    console.log(remark);
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

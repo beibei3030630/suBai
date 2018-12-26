@@ -5,7 +5,11 @@ Page({
    * 页面的初始数据
    */
   data: {
-    paymentStatue:null
+    paymentStatue:null,
+    successTitle:"支付成功",
+    successTip:"订单已添加到您的订单列表",
+    failTitle:"支付失败",
+    failTip:"订单已添加到您的订单列表，请重新支付"
   },
 
   /**
@@ -14,7 +18,16 @@ Page({
   onLoad: function (options) {
 
   },
-
+  checkOrder(){
+    wx.switchTab({
+      url: '../../order/orderList'
+    })
+  },
+  goHome(){
+    wx.switchTab({
+      url: '../../home/home'
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
