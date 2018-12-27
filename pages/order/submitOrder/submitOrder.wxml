@@ -3,7 +3,7 @@
 <view class="orderContainer">
   <view class="list-wrap">
     <view class="list-item">
-      <b-scrollItem scrollData="{{produceData}}" hasBook="{{false}}" border="none" />
+      <b-scrollItem produceData="{{produceData}}" hasBook="{{false}}" border="none" />
     </view>
     <view class="list-item addAddress">
       <b-list title="添加服务地址" detail="还没有服务地址，点击添加地址" border="none" fontSize="60rpx" bind:onClick="toAddressList" />

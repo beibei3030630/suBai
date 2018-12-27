@@ -12,16 +12,16 @@ Component({
       type: String,
       value: "" //判断是要注册还是登陆，注册值为register 登陆值为login
     },
-    smsCodeSucced: {
-      type: Boolean,
-      value: false,
-      observer: "submitSmsCode"
-    },
     submitFailed: {
       type: Boolean,
       value: null,
       observer: "submitFailed"
-    } //标识符 注册是否完成
+    }, //标识符 注册是否完成
+    smsCodeSucced: {
+      type: Number,
+      value: 0,
+      observer: "smsCodeSucced"
+    } //标识符 
   },
 
   /**
@@ -35,20 +35,20 @@ Component({
     confirmBtnDis: false,
     phoneNum: '', //获取手机输入框的内容
     smsBtnDisabled: false, //在倒计时获取验证码禁用
-    smsCodeVal:null
+    smsCodeVal: null
   },
   /**
    * 组件的方法列表
    */
   methods: {
     // 登陆按钮绑定事件
-    tapToUserInfo(){
+    tapToUserInfo() {
       this.triggerEvent("tapToUserInfo", {}, {})
     },
     //返回首页
-   gohome(){
-     this.triggerEvent("gohome",{},{})
-   },
+    gohome() {
+      this.triggerEvent("gohome", {}, {})
+    },
     //以下为注册的业务逻辑
     //  注册不成功 触动此函数 注册成功的话 就在页面中跳转了
     submitFailed() {
@@ -56,8 +56,8 @@ Component({
         confirmBtnBgc: "#09BA07",
         confirmBtnVal: "确认",
         confirmBtnDis: false,
-        smsCodeVal:''
-      })  
+        smsCodeVal: ''
+      })
     },
     // 提交注册信息
     submitRegister(e) {
@@ -82,17 +82,33 @@ Component({
     clickSmsBtn() {
       let checkPhoneNum = this._checkPhoneNum();
       if (checkPhoneNum) {
-        wx.showToast({
-          title: '验证码发送成功',
-          icon: 'success'
-        })
-        this._cutDown()
         this.triggerEvent("getSmsCode", {
           phoneNum: this.data.phoneNum
         }, {})
+        this.smsCodeSucced()
       }
     },
-    
+    // 根据发送的验证码返回回来的结果 判断是否发送成功
+    smsCodeSucced(newVal) {
+      //验证码是否发送成功(成功为1，失败为2)
+      let that = this;
+      if (newVal == 1) {
+        wx.showToast({
+          title: '验证码发送成功',
+          icon: 'success',
+          success() {
+            that._cutDown()
+          }
+        })
+        this.data.smsCodeSucced=0;//验证码标识符清零，防止操作多次，只显示一次信息
+      } else if (newVal == 2) {
+        wx.showToast({
+          title: '验证码发送失败',
+          icon: "none"
+        })
+        this.data.smsCodeSucced=0;
+      }
+    },
     _cutDown() {
       const that = this;
       let count = 60;

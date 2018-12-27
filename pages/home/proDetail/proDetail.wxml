@@ -1,6 +1,19 @@
 <!--pages/home/proDetail/proDetail.wxml-->
 <view class="proDetailContainer">
-  <view class="mainContent"></view>
+  <view class="mainContainer">
+    <view class="imgContainer">
+      <image src="{{proDetailData.goods_pic}}"></image>
+    </view>
+    <view class="infoContainer">
+      <text>{{proDetailData.goods_name}}</text>
+      <text>{{proDetailData.goods_title}}</text>
+      <text>{{proDetailData.service_type}}</text>
+      <text>{{proDetailData.goods_price}}</text>
+    </view>
+    <view class="imgContainer">
+      <image src="{{proDetail.goods_detail}}"></image>
+    </view>
+  </view>
   <view class="tabBar">
     <view class="left"><image src="/images/icon/local.png"/>{{currentCity}}</view>
     <view class="right" bindtap='toOrder'>立即购买</view>

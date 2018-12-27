@@ -1,4 +1,8 @@
 // pages/order/addressList/addressList.js
+import{
+  orderModel 
+}from "../../../models/orderModel.js";
+const ordermodel=new orderModel();
 Page({
 
   /**
@@ -25,7 +29,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    ordermodel.getAddressList().then(res=>{
+      console.log(res.data)
+      this.setData({
+        addressList:res.data.addrlist
+      })
+      console.log(this.data.addressList)
+    });
   },
   swtichSelect(){
     this.setData({

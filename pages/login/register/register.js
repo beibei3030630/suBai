@@ -11,31 +11,41 @@ Page({
    */
 
   data: {
-    smsCodeSucced: null,
+    smsCodeSucced: 0,
     submitFailed: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {},
+  onLoad: function(options) {
+
+  },
   getSmsCode(e) {
     loginmodel.getSmsCode(e.detail.phoneNum).then(res => {
       console.log(res)
+      if (res.data.result == 1) {
+        this.setData({
+          smsCodeSucced: 1
+        })
+      }else{
+        this.setData({
+          smsCodeSucced:2
+        })
+      }
     })
   },
   submitRegister(e) {
     const registerData = e.detail.registerData;
     let session_id = globalData.session_id;
-    console.log(session_id);
     loginmodel.submitRegister(registerData, session_id).then(res => {
       console.log(res)
       if (res.data.result == 1) {
-        let that=this;
+        let that = this;
         wx.showToast({
           title: res.data.message,
           icon: 'success',
-          success(){
+          success() {
             that._successRegister()
           }
         })
@@ -51,14 +61,14 @@ Page({
       }
     })
   },
-  _successRegister(){
-    setTimeout(function () {
+  _successRegister() {
+    setTimeout(function() {
       wx.switchTab({
         url: '/pages/my/my',
       })
     }, 1500)
   },
-  
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

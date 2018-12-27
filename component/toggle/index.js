@@ -5,8 +5,8 @@ Component({
    */
   properties: {
     toggleData: {
-      type:Object,
-      value:{}
+      type: Object,
+      value: {}
     }
   },
 
@@ -27,6 +27,11 @@ Component({
       this.setData({
         currentTab
       })
+    },
+    clickBtn(e) {
+      this.triggerEvent("clickBtn", {
+        goods_id: e.detail.goods_id
+      }, {})
     }
   }
 })

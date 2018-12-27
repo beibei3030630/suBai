@@ -37,7 +37,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 19,
+			"current": 3,
 			"list": [
 				{
 					"id": -1,
@@ -58,10 +58,10 @@
 					"query": ""
 				},
 				{
-					"id": -1,
+					"id": 3,
 					"name": "proDetail",
 					"pathName": "pages/home/proDetail/proDetail",
-					"query": ""
+					"query": "id=1a0287d8a39744c9b761108580732fbb"
 				},
 				{
 					"id": -1,
@@ -156,7 +156,14 @@
 				{
 					"id": -1,
 					"name": "mesgBoard",
-					"pathName": "pages/order/mesgBoard/mesgBoard"
+					"pathName": "pages/order/mesgBoard/mesgBoard",
+					"query": ""
+				},
+				{
+					"id": -1,
+					"name": "home",
+					"pathName": "pages/home/home",
+					"query": ""
 				}
 			]
 		}

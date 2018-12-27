@@ -24,7 +24,7 @@ Page({
   tapLogin(e) {
     wxLoginmodel.toLogin(res => {
       wx.setStorageSync("session_id", "session_id=" + res.session_id)
-      let that=this;
+      let that = this;
       wx.showToast({
         title: '授权成功，正在跳转...',
         icon: 'none',
@@ -39,16 +39,18 @@ Page({
     })
   },
   _loginSuccess(resData) {
-    let pages = getCurrentPages();
-    let prevPage = pages[pages.length - 2];
-    prevPage.setData({
-      userInfo: {
-        nickName: resData.shopUser.username,
-        avatarUrl: resData.shopUser.head_img,
-        phoneNum: resData.shopUser.phone
-      },
-      authorized: true
-    })
+    // 不用传递数据  my页面本来就会判断一下 有没有授权登录过 
+    // 切换页面 可以在this.show中显示 在那里再判断一次就可以了
+    // let pages = getCurrentPages();
+    // let prevPage = pages[pages.length - 2];
+    // prevPage.setData({
+    //   userInfo: {
+    //     nickName: resData.shopUser.username,
+    //     avatarUrl: resData.shopUser.head_img,
+    //     phoneNum: resData.shopUser.phone
+    //   },
+    //   authorized: true
+    // })
     setTimeout(function() {
       wx.navigateBack({
         delta: 1

@@ -9,7 +9,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentCity:"上海市"
+    currentCity: "上海市",
+    proDetailData: {}
   },
 
   /**
@@ -17,13 +18,18 @@ Page({
    */
   onLoad: function(options) {
     let id = options.id;
-    console.log(id)
-    homemodel.getProDetail(id).then(res => console.log(res.data))
+    homemodel.getProDetail(id).then(res => {
+      this.setData({
+        proDetailData: res.data.goods
+      })
+    })
   },
-  toOrder(){
-    // wx.navigateTo({
-    //   url: '../../order/submitOrder/submitOrder',
-    // })
+  toOrder() {
+    this.data.proDetailData.goods_detail = encodeURIComponent(this.data.proDetailData.goods_detail)
+    let goodsData = JSON.stringify(this.data.proDetailData);
+    wx.navigateTo({
+      url: '../../order/submitOrder/submitOrder?goodsData=' + goodsData,
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

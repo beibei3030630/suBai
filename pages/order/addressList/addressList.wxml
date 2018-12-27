@@ -4,7 +4,7 @@
     <block wx:for="{{addressList}}" wx:key=''>
       <view class="addressItem">
         <view class="addressDetail">
-          <text class="top">{{item.name}} {{item.phoneNum}}</text>
+          <text class="top">{{item.addr_realname}} {{item.addr_phone}}</text>
           <text class="center">{{item.address}}</text>
           <text class='defaultMark bottom' wx:if="{{defaultFlag}}">默认地址</text>
         </view>

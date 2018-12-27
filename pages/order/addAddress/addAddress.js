@@ -1,13 +1,17 @@
 // pages/order/addAddress/addAddress.js
+import{
+  orderModel
+} from "../../../models/orderModel.js";
+const ordermodel = new orderModel();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {  
     areaFlag:false,
     areaList:["80平米以下","80-99平米","100-119平米","120-139平米","140-159平米","160平米以上"],
-    areaVal: "选择您的服务面积"
+    areaVal: "选择您的服务面积",
+    isDefault:false
   },
 
   /**
@@ -31,6 +35,26 @@ Page({
     this.setData({
       areaVal: e._relatedInfo.anchorTargetText,
       areaFlag:false
+    })
+  },
+  addressSumbit(e){
+    let addressInfo=e.detail.value;
+    console.log(addressInfo);
+    let isDefault = this.data.isDefault;
+    ordermodel.addAddress(addressInfo, isDefault).then(res=>{
+      console.log(res.data)
+      if(res.data.result==1){
+        wx.showToast({
+          title: '保存成功',
+          success(){
+            setTimeout(function(){
+              wx.navigateTo({
+                url: '../addressList/addressList',
+              })
+            },1000)
+          }
+        })
+      }
     })
   },
   /**

@@ -55,6 +55,11 @@ Page({
       })
     })
   },
+  toBook(e){
+    wx.navigateTo({
+      url: './proDetail/proDetail?id=' + e.detail.goods_id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

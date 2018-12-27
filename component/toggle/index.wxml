@@ -1,18 +1,18 @@
 <!--component/toggle/index.wxml-->
 <view class="toggleContainer">
   <view class="tab">
-    <block wx:for="{{tabTitle}}" >
+    <block wx:for="{{tabTitle}}" wx:key=''>
       <view class="swiper-tab-item {{tool.setActive(currentTab,index)}}" data-current="{{index}}" bind:tap="clickTap">{{item}}</view>
     </block>
   </view>
   <block wx:for="{{toggleData.toggleFirstData}}" wx:key="" wx:if="{{currentTab==0}}">
-    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" />
+    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" bind:clickBtn="clickBtn" />
   </block>
   <block wx:for="{{toggleData.toggleSecondData}}" wx:key="" wx:if="{{currentTab==1}}">
-    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" />
+    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" bind:clickBtn="clickBtn" />
   </block>
   <block wx:for="{{toggleData.toggleThirdData}}" wx:key="" wx:if="{{currentTab==2}}">
-    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" />
+    <b-scroll-item scrollData="{{tool.filterScrollData(item)}}" bind:clickBtn="clickBtn" />
   </block>
 </view>
 <wxs module="tool">
@@ -23,17 +23,18 @@
       return ''
     }
   }
-  var filterData=function(itemData){
-    var newItemData={
-      title:itemData.goods_name,
-      desc:itemData.goods_title,
-      price:itemData.goods_price,
-      img:itemData.goods_pic
+  var filterData = function(itemData) {
+    var newItemData = {
+      title: itemData.goods_name,
+      desc: itemData.goods_title,
+      price: itemData.goods_price,
+      img: itemData.goods_pic,
+      id: itemData.goods_id
     }
     return newItemData
   }
   module.exports = {
     setActive: setActive,
-    filterScrollData:filterData
+    filterScrollData: filterData
   }
 </wxs>

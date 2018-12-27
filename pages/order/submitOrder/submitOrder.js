@@ -27,11 +27,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // 以下为拿到当天日期
     let dateObj = new Date();
     let currentMonth = dateObj.getMonth() + 1;
     let currentDate = dateObj.getFullYear() + "-" + currentMonth + "-" + dateObj.getDate();
     this.setData({
       pickerDate: currentDate
+    })
+   //以下为拿到当前下单订单的goods_id
+    let goodsData = JSON.parse(options.goodsData);
+    this.setData({
+      produceData:goodsData
     })
   },
   toAddressList() {
