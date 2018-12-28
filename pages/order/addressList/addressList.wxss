@@ -12,6 +12,7 @@ page {
 
 .addressList {
   width: 100%;
+  margin-bottom: 80rpx;
 }
 
 .addressItem {

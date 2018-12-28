@@ -22,7 +22,14 @@ Page({
   },
   submitMsgBoard(e){
     let remark=e.detail.value.remark;
-    console.log(remark);
+    let pages=getCurrentPages();
+    let prevPage=pages[pages.length-2];
+    prevPage.setData({
+      remark
+    })
+    wx.navigateBack({
+      delta:2
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

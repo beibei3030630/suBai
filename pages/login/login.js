@@ -1,4 +1,5 @@
 //pages/login/login.js
+let globalData=getApp().globalData;
 import {
   wxLoginModel
 }
@@ -24,6 +25,7 @@ Page({
   tapLogin(e) {
     wxLoginmodel.toLogin(res => {
       wx.setStorageSync("session_id", "session_id=" + res.session_id)
+      this._upDateSessionID()
       let that = this;
       wx.showToast({
         title: '授权成功，正在跳转...',
@@ -37,6 +39,10 @@ Page({
         }
       })
     })
+  },
+  // login 返回上一页刷新 不会刷新app.js的数据 这里手动更新一下 
+  _upDateSessionID(){
+    globalData.session_id=wx.getStorageSync("session_id");
   },
   _loginSuccess(resData) {
     // 不用传递数据  my页面本来就会判断一下 有没有授权登录过 

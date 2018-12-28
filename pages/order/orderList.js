@@ -3,7 +3,6 @@ import {
   orderModel
 } from "../../models/orderModel.js";
 let ordermodel = new orderModel();
-let globalData=getApp().globalData;
 Page({
 
   /**
@@ -62,8 +61,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(globalData.session_id);
-    ordermodel.getOrderList(globalData.session_id).then(res=>{
+    ordermodel.getOrderList().then(res=>{
       console.log(res)
     })
   },

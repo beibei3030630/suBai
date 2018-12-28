@@ -1,19 +1,25 @@
 /* pages/order/submitOrder/submitOrder.wxss */
-page{
-  background-color: #F9F8FD;
+
+page {
+  background-color: #f9f8fd;
 }
-.orderContainer{
+
+.orderContainer {
   display: flex;
   flex-direction: column;
 }
+
 /* 服务时间选择器 */
-.datePicker{
+
+.datePicker {
   font-size: 28rpx;
   padding-right: 5rpx;
-  color: #aaa;  
+  color: #aaa;
 }
+
 /* 服务时间标签 */
-.list-item .tagContainer{
+
+.list-item .tagContainer {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
@@ -22,34 +28,82 @@ page{
   margin: 30rpx auto;
   width: 95%;
 }
-.list-item  .serviceTips{
+
+.list-item  .serviceTips {
   font-size: 28rpx;
   color: #d4d4d4;
-  margin:  60rpx auto;
+  margin: 60rpx auto;
   width: 90%;
-  text-align:center;
+  text-align: center;
 }
-.list-wrap{
+
+.list-item b-list .remarkContent {
+  color: #999696;
+  font-size: 32rpx;
+  text-overflow: ellipsis;
+  white-space: norwap;
+  overflow: hidden;
+}
+
+.list-wrap {
   width: 100%;
 }
-.list-wrap .list-item{
+
+.list-wrap .list-item {
   background-color: #fff;
   margin-bottom: 30rpx;
 }
+
 .list-wrap .addAddress b-list view .index--detail {
   color: #aaa;
   font-size: 25rpx;
 }
-.list-wrap .serviePrice b-list view{
+
+.list-wrap .addAddress>view {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 0 20rpx 50rpx;
+}
+
+.addAddress>view .top {
+  display: flex;
+  direction: row;
+  align-items: center;
+}
+
+.addAddress>view .top .addrName {
+  font-size: 32rpx;
+  color: #434343;
+}
+
+.addAddress>view .top .addrPhoneNum {
+  margin-left: 35rpx;
+  font-size: 28rpx;
+  color: #aaa;
+}
+
+.addAddress>view .addrDetail {
+  font-size: 32rpx;
+  color: #000;
+  margin-top: 10rpx;
+  width: 60%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  word-break: break-all;
+}
+
+.list-wrap .serviePrice b-list view {
   font-size: 26rpx;
   color: #aaa;
 }
-.tips{
+
+.tips {
   font-size: 24rpx;
   color: #aaa;
   margin-left: 40rpx;
   margin-top: 40rpx;
 }
+
 .tabBar {
   width: 100%;
   height: 100rpx;
@@ -57,7 +111,7 @@ page{
   flex-direction: row;
   position: fixed;
   bottom: 0;
-  border-top:1px solid #ececec;
+  border-top: 1px solid #ececec;
 }
 
 .tabBar .right {
@@ -82,4 +136,3 @@ page{
   justify-content: center;
   align-items: center;
 }
-

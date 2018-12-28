@@ -1,4 +1,8 @@
 // pages/order/useTicket/useTicket.js
+import {
+  orderModel
+} from "../../../models/orderModel.js";
+const ordermodel = new orderModel();
 Page({
 
   /**
@@ -30,23 +34,23 @@ Page({
         priceDesc: "满400元可用"
       }
     ],
-    currentIndex:null,
-    initialFlag:true,
-    moreFlag:true
+    currentIndex: null,
+    initialFlag: true,
+    moreFlag: true
   },
-  
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    ordermodel.couponStatus(0).then(res=>console.log(res))
   },
-  onClick(e){
-    let currentIndex=e.currentTarget.dataset.currentIndex;
+  onClick(e) {
+    let currentIndex = e.currentTarget.dataset.currentIndex;
     this.setData({
       currentIndex
     })
-    
+
   },
 
   /**

@@ -1,51 +1,60 @@
 // pages/order/addressList/addressList.js
-import{
-  orderModel 
-}from "../../../models/orderModel.js";
-const ordermodel=new orderModel();
+import {
+  orderModel
+} from "../../../models/orderModel.js";
+const ordermodel = new orderModel();
+let globalData = getApp().globalData;
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    addressList: [{
-        name: "向云清",
-        phoneNum: "18770890623",
-        address: "漕宝路401号3号楼2楼B座"
-
-      },
-      {
-        name: "向云清",
-        phoneNum: "18770890623",
-        address: "漕宝路401号3号楼2楼B座"
-
-      }
-    ],
+    addressList: [],
     defaultFlag: false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-    ordermodel.getAddressList().then(res=>{
+  onLoad: function(options) {},
+  // 获取地址列表
+  getAddressList() {
+    ordermodel.getAddressList().then(res => {
       console.log(res.data)
       this.setData({
-        addressList:res.data.addrlist
+        addressList: res.data.addrlist
       })
-      console.log(this.data.addressList)
-    });
+    })
   },
-  swtichSelect(){
+  swtichSelect() {
     this.setData({
       defaultFlag: !this.data.defaultFlag
     })
   },
-  addAddress(){
+  addAddress() {
     wx.navigateTo({
       url: '../addAddress/addAddress',
     })
+  },
+  //选取地址，点击后携带点击的地址内容返回上一页
+  chooseAddress(e) {
+    let currentIndex = e.currentTarget.dataset.currentIndex;
+    let addressInfo = JSON.stringify(this.data.addressList[currentIndex]);
+    wx.navigateTo({
+      url: '../submitOrder/submitOrder?data='+addressInfo,
+    })
+      // 选择地址列表 还可以新增地址 所以返回的话 有可能会返回到新增地址页面
+      // 所以以下方法不好用
+      // let pages=getCurrentPages();
+      // let prevPage=pages[pages.length-2];
+      // prevPage.setData({
+      //   addressInfo: this.data.addressList[currentIndex],
+      //   hasAddress:true
+      // })
+      // wx.navigateBack({
+      //   delta:1
+      // })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -58,7 +67,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log(globalData.session_id)
+    this.getAddressList();
   },
 
   /**

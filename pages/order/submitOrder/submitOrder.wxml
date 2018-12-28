@@ -6,7 +6,14 @@
       <b-scrollItem produceData="{{produceData}}" hasBook="{{false}}" border="none" />
     </view>
     <view class="list-item addAddress">
-      <b-list title="添加服务地址" detail="还没有服务地址，点击添加地址" border="none" fontSize="60rpx" bind:onClick="toAddressList" />
+      <b-list wx:if="{{!hasAddress}}" title="添加服务地址" detail="还没有服务地址，点击添加地址" border="none" fontSize="60rpx" bind:onClick="toAddressList" />
+      <view wx:else bind:tap="toAddressList">
+        <view class="top">
+          <text class="addrName">{{addressInfo.addr_realname}}</text>
+          <text class="addrPhoneNum">{{addressInfo.addr_phone}}</text>
+        </view>
+        <text class="addrDetail">{{addressInfo.address}}</text>
+      </view>
     </view>
     <view class="list-item">
       <b-list title="服务时间" borderStyle="1rpx solid #f4f4f4" setArrow="{{false}}">
@@ -14,13 +21,16 @@
       </b-list>
       <view class="tagContainer" wx:if="{{serviceTimeList.length!=0}}">
         <block wx:for="{{serviceTimeList}}" wx:key="">
-          <b-tag tagContent="{{item.service_time}}" listId="{{item.service_id}}" bind:clickTag="getServiceId"/>
+          <b-tag tagContent="{{item.service_time}}" listId="{{item.service_id}}" bind:clickTag="getServiceId" />
         </block>
       </view>
       <view class="serviceTips" wx:if="{{serviceTimeList.length==0&&pickedFlag}}">
         服务时间段以约满，请重新选择服务日期
       </view>
-      <b-list title="订单备注" desc="选填、可填写服务需求" border="none" />
+      <b-list title="订单备注" wx:if="{{!remark}}" desc="选填、可填写服务需求" border="none" bind:onClick="toMesgBoard" />
+      <b-list title="订单备注" wx:else border="none" bind:onClick="toMesgBoard" setArrow="{{false}}">
+        <text class="remarkContent" slot="rightContentSlot">{{remark}}</text>
+      </b-list>
     </view>
     <view class="list-item">
       <b-list title="优惠券" desc="使用优惠券" border="none" />

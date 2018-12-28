@@ -20,13 +20,23 @@ Page({
       goods_title: "456",
       goods_price: "789"
     },
-    pickedFlag:false
+    // 从选取地址页返回 携带来的地址信息
+    addressInfo:{},
+    pickedFlag:false,
+    hasAddress:false
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    //拿到选择到的地址
+    if(options.data){
+      this.setData({
+        addressInfo:JSON.parse(options.data),
+        hasAddress:true
+      })
+    }
     // 以下为拿到当天日期
     let dateObj = new Date();
     let currentMonth = dateObj.getMonth() + 1;
@@ -39,10 +49,16 @@ Page({
     this.setData({
       produceData:goodsData
     })
+   
   },
   toAddressList() {
     wx.navigateTo({
       url: '../addressList/addressList',
+    })
+  },
+  toMesgBoard(){
+    wx.navigateTo({
+      url: '../mesgBoard/mesgBoard',
     })
   },
   bindDateChange: function(e) {
@@ -87,8 +103,8 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function() {
-
+  onShow: function(options) {
+ 
   },
 
   /**

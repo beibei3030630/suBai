@@ -3,7 +3,7 @@ import {
 } from "../config.js";
 class httpP {
   request({
-    url:url,
+    url: url,
     data = {},
     method = "get",
     header = {
@@ -11,6 +11,7 @@ class httpP {
     }
   }) {
     return new Promise((resolve, reject) => {
+      const that = this;
       wx.request({
         url: httpData.appurl + url,
         header: header,
@@ -22,12 +23,13 @@ class httpP {
             resolve(res);
           } else {
             reject(res)
+            that._processError();
           }
         },
         fail(err) {
           reject(err)
+          that._processError();
         }
-
       })
     })
   }
@@ -52,6 +54,19 @@ class httpP {
           reject(err)
         }
       })
+    })
+  }
+  _processError() {
+    wx.showToast({
+      title: '尚未登录，请先登录...',
+      icon: "none",
+      success() {
+        setTimeout(function() {
+          wx.navigateTo({
+            url: '/pages/login/login',
+          })
+        }, 2000)
+      }
     })
   }
 }
