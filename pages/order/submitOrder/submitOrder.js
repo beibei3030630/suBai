@@ -15,11 +15,7 @@ Page({
     originPrice: "3999",
     discountPrice: "3999",
     // 产品展示列表
-    produceData: {
-      goods_name: "123",
-      goods_title: "456",
-      goods_price: "789"
-    },
+    produceData: {},
     // 从选取地址页返回 携带来的地址信息
     addressInfo:{},
     pickedFlag:false,
@@ -30,6 +26,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(123)
     //拿到选择到的地址
     if(options.data){
       this.setData({
