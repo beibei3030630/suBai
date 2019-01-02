@@ -12,7 +12,10 @@
       </view>
       <view class="inputItem">
         <text>服务地址</text>
-        <input placeholder='搜索您的小区/大厦/学校等' name="city"></input>
+        <input placeholder='搜索您的小区/大厦/学校等' bindinput='bindKeyInput' name="city" value="{{addressVal}}" bindconfirm='confirmAddress'></input>
+      </view>
+      <view class="searchPanel" wx:if="{{searchFlag}}">
+        <b-addressSearch searchResult="{{searchResult}}" bind:getAddress="getAddress"/>
       </view>
       <view class="inputItem">
         <text>详细地址</text>

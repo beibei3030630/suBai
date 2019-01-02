@@ -5,7 +5,7 @@ import {
   httpData
 } from "../config.js";
 class locationModel extends httpP {
-  authorize(sCallBack) {
+  authorize(sCallback) {
     wx.getSetting({
       success(res) {
         if (!res.authSetting['scope.userLocation']) {
@@ -13,14 +13,24 @@ class locationModel extends httpP {
             scope: 'scope.userLocation',
             success() {
               wx.getLocation({
-                success: function(res) {
-                  // 拿到经度 和 纬度
-                  // res.longitude 
-                  // res.latitude
-                  sCallBack(res)
+                success: function(res1) {
+                  sCallback(res1)
                 },
               })
             }
+          })
+        }
+      }
+    })
+  }
+  refreshAuthorize(sCallback) {
+    wx.getSetting({
+      success(res) {
+        if (res.authSetting['scope.userLocation']) {
+          wx.getLocation({
+            success: function(locationRes) {
+              sCallback(locationRes)
+            },
           })
         }
       }

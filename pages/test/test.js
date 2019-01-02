@@ -134,7 +134,7 @@ Page({
   },
   loadCity(log, lat) {
     locationmodel.loadCity(log, lat).then(res => {
-      console.log(res)
+      console.log(res.data.result.addressComponent.city)
     })
   },
   login(code, iv, encryptedData) {

@@ -1,0 +1,28 @@
+/* component/addressSearch/index.wxss */
+
+.searchContainer {
+  display: flex;
+  flex-direction: column;
+  padding: 20rpx 50rpx 20rpx 40rpx;
+  box-sizing: border-box;
+}
+
+.singleContainer {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-bottom: 30rpx;
+}
+
+.singleContainer:last-child {
+  margin-bottom: 0;
+}
+
+.singleContainer .localImg {
+  width: 25%;
+}
+
+.singleContainer image {
+  width: 44rpx;
+  height: 54rpx;
+}

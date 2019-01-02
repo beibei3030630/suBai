@@ -44,7 +44,10 @@ page {
   background-color: #09bb07;
   color: #fff;
 }
-
+/* 地址联想 */
+.searchPanel{
+  background-color: #f7f7f7;
+}
 
 /* 面积选择框 */
 

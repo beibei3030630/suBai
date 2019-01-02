@@ -1,0 +1,11 @@
+<!--component/addressSearch/index.wxml-->
+<view class="searchContainer">
+  <block wx:for="{{searchResult}}" wx:key=''>
+    <view class='singleContainer'>
+      <view class="localImg">
+        <image src="/images/icon/local.png"></image>
+      </view>
+      <view bindtap='getAddress' data-address="{{item}}">{{item}}</view>
+    </view>
+  </block>
+</view>
