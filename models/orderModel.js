@@ -44,6 +44,16 @@ class orderModel extends httpP {
       method: "post"
     })
   }
+  addOrder(goods_id, address_id, service_time, servicetime_id){
+    return this.request({
+      url: "addorder?goods_id=" + goods_id + "&service_time=" + service_time + "&address_id=" + address_id + "&servicetime_id=" + servicetime_id +"&coupon_id=undefined&remark=undefined",
+      header:{
+        'content-type': "application/json",
+        'cookie': globalData.session_id
+      },
+      method:"post"
+    })
+  }
 }
 export {
   orderModel

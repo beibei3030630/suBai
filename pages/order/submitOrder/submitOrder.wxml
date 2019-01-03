@@ -36,7 +36,7 @@
       <b-list title="优惠券" desc="使用优惠券" border="none" />
     </view>
     <view class="list-item serviePrice">
-      <b-list title="服务金额" desc="￥3999.00" setArrow="{{false}}" border="none" descIndent="none" />
+      <b-list title="服务金额" desc="￥{{originPrice}}" setArrow="{{false}}" border="none" descIndent="none" />
     </view>
     <view class="tips">
       购买即视作同意
@@ -46,7 +46,7 @@
   </view>
   <view class="tabBar">
     <view class="left">还需支付:
-      <text class="hightLight">￥{{discountPrice}}.00</text>
+      <text class="hightLight">￥{{discountPrice}}</text>
     </view>
     <view class="right" bindtap='confirmOrder'>确认下单</view>
   </view>

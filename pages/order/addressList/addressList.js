@@ -33,28 +33,28 @@ Page({
     })
   },
   addAddress() {
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../addAddress/addAddress',
     })
   },
   //选取地址，点击后携带点击的地址内容返回上一页
   chooseAddress(e) {
-    let currentIndex = e.currentTarget.dataset.currentIndex;
-    let addressInfo = JSON.stringify(this.data.addressList[currentIndex]);
-    wx.navigateTo({
-      url: '../submitOrder/submitOrder?data='+addressInfo,
+     let currentIndex = e.currentTarget.dataset.currentIndex;
+    // let addressInfo = JSON.stringify(this.data.addressList[currentIndex]);
+    // wx.navigateTo({
+    //   url: '../submitOrder/submitOrder?data=' + addressInfo,
+    // })
+    // 选择地址列表 还可以新增地址 所以返回的话 有可能会返回到新增地址页面
+    // 所以以下方法不好用
+    let pages=getCurrentPages();
+    let prevPage=pages[pages.length-2];
+    prevPage.setData({
+      addressInfo: this.data.addressList[currentIndex],
+      hasAddress:true
     })
-      // 选择地址列表 还可以新增地址 所以返回的话 有可能会返回到新增地址页面
-      // 所以以下方法不好用
-      // let pages=getCurrentPages();
-      // let prevPage=pages[pages.length-2];
-      // prevPage.setData({
-      //   addressInfo: this.data.addressList[currentIndex],
-      //   hasAddress:true
-      // })
-      // wx.navigateBack({
-      //   delta:1
-      // })
+    wx.navigateBack({
+      delta:1
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

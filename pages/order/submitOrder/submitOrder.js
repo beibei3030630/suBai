@@ -12,7 +12,7 @@ Page({
     pickerDate: null,
     serviceId:null,
     serviceTimeList: [], // 服务时间标签
-    originPrice: "3999",
+    originPrice: "",
     discountPrice: "3999",
     // 产品展示列表
     produceData: {},
@@ -26,14 +26,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    console.log(123)
-    //拿到选择到的地址
-    if(options.data){
-      this.setData({
-        addressInfo:JSON.parse(options.data),
-        hasAddress:true
-      })
-    }
+    // console.log(123)
+    // //拿到选择到的地址
+    // if(options.data){
+    //   this.setData({
+    //     addressInfo:JSON.parse(options.data),
+    //     hasAddress:true
+    //   })
+    // }
     // 以下为拿到当天日期
     let dateObj = new Date();
     let currentMonth = dateObj.getMonth() + 1;
@@ -43,8 +43,10 @@ Page({
     })
    //以下为拿到当前下单订单的goods_id
     let goodsData = JSON.parse(options.goodsData);
+    console.log(goodsData)
     this.setData({
-      produceData:goodsData
+      produceData:goodsData,
+      originPrice:goodsData.goods_price
     })
    
   },
@@ -88,6 +90,12 @@ Page({
       serviceId: serviceId,
       serviceTimeList:[],
       pickedFlag:false
+    })
+  },
+  // 确认下单
+  confirmOrder(){
+    ordermodel.addOrder(this.data.produceData.goods_id, this.data.addressInfo.address_id, this.data.pickerDate, this.data.serviceId).then(res=>{
+      console.log(res)
     })
   },
   /**
